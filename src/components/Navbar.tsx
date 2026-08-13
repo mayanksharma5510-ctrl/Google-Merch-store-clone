@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Search, ShoppingBag, Heart, Menu, X, BarChart2, ArrowRight, Sparkles, Layout, Sliders, Wand2 } from 'lucide-react';
+import { Search, ShoppingBag, Heart, Menu, X, BarChart2, ArrowRight, Sparkles, Layout, Sliders, Wand2, Sun, Moon } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
+import { useTheme } from '../context/ThemeContext';
 import { PRODUCTS } from '../data/products';
 
 export const Navbar: React.FC = () => {
@@ -19,6 +20,8 @@ export const Navbar: React.FC = () => {
     setSearchQuery,
     activeTemplate,
   } = useShop();
+
+  const { theme, toggleTheme, isDark } = useTheme();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
@@ -81,10 +84,10 @@ export const Navbar: React.FC = () => {
       }`}
     >
       <div
-        className={`max-w-7xl mx-auto backdrop-blur-md border border-gray-200/80 rounded-2xl sm:rounded-full px-4 sm:px-6 lg:px-8 pointer-events-auto transition-all duration-300 ${
+        className={`max-w-7xl mx-auto backdrop-blur-md border rounded-2xl sm:rounded-full px-4 sm:px-6 lg:px-8 pointer-events-auto transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/85 shadow-md border-gray-300/80 scale-[0.99] py-0.5'
-            : 'bg-white/70 shadow-xs'
+            ? 'bg-white/85 dark:bg-[#111827]/85 shadow-md border-gray-300/80 dark:border-gray-800 scale-[0.99] py-0.5'
+            : 'bg-white/70 dark:bg-[#111827]/70 shadow-xs border-gray-200/80 dark:border-gray-800'
         }`}
       >
         <div className="flex items-center justify-between h-16 sm:h-20 gap-4">
@@ -94,7 +97,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setCurrentPage('home')}
               className="flex items-center gap-2.5 text-left group cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-full bg-white border border-gray-200/80 p-2 flex items-center justify-center shadow-xs group-hover:scale-105 group-hover:border-blue-300 transition-all">
+              <div className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 border border-gray-200/80 dark:border-gray-700 p-2 flex items-center justify-center shadow-xs group-hover:scale-105 group-hover:border-blue-300 transition-all">
                 <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
                   <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
@@ -103,32 +106,59 @@ export const Navbar: React.FC = () => {
                 </svg>
               </div>
               <div>
-                <span className="text-base sm:text-lg font-extrabold text-[#111827] tracking-tight block leading-none">
+                <span className="text-base sm:text-lg font-extrabold text-[#111827] dark:text-white tracking-tight block leading-none">
                   Google <span className="text-[#2563EB]">Merch Shop</span>
                 </span>
               </div>
             </button>
 
             {/* Desktop Nav Links */}
-            <nav className="hidden xl:flex items-center gap-5 text-xs font-bold text-[#6B7280]">
+            <nav className="hidden lg:flex items-center gap-1 sm:gap-2 text-xs font-bold text-[#6B7280] dark:text-gray-300">
               <button
                 onClick={() => setCurrentPage('home')}
-                className={`hover:text-[#2563EB] transition-colors cursor-pointer ${
-                  currentPage === 'home' ? 'text-[#111827] font-black underline underline-offset-4 decoration-[#2563EB] decoration-2' : ''
+                className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
+                  currentPage === 'home'
+                    ? 'bg-[#111827] dark:bg-white text-white dark:text-[#111827] shadow-2xs font-extrabold'
+                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-gray-800/80'
                 }`}
               >
-                Live Storefront
+                Home
               </button>
+
               <button
                 onClick={() => {
                   setSelectedCategory('All');
                   setCurrentPage('shop');
                 }}
-                className={`hover:text-[#2563EB] transition-colors cursor-pointer ${
-                  currentPage === 'shop' ? 'text-[#111827] font-black underline underline-offset-4 decoration-[#2563EB] decoration-2' : ''
+                className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
+                  currentPage === 'shop'
+                    ? 'bg-[#111827] dark:bg-white text-white dark:text-[#111827] shadow-2xs font-extrabold'
+                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-gray-800/80'
                 }`}
               >
-                Catalog
+                Shop Catalog
+              </button>
+
+              <button
+                onClick={() => setCurrentPage('our-story')}
+                className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
+                  currentPage === 'our-story'
+                    ? 'bg-[#111827] dark:bg-white text-white dark:text-[#111827] shadow-2xs font-extrabold'
+                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-gray-800/80'
+                }`}
+              >
+                Our Story
+              </button>
+
+              <button
+                onClick={() => setCurrentPage('contact-faq')}
+                className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
+                  currentPage === 'contact-faq'
+                    ? 'bg-[#111827] dark:bg-white text-white dark:text-[#111827] shadow-2xs font-extrabold'
+                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-gray-800/80'
+                }`}
+              >
+                Contact & FAQ
               </button>
             </nav>
           </div>
@@ -142,13 +172,13 @@ export const Navbar: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setIsSearchFocused(true)}
-                className="w-full pl-10 pr-4 py-2 text-xs rounded-full bg-gray-100 text-[#111827] border border-transparent focus:border-gray-300 focus:outline-none focus:bg-white transition-all placeholder:text-[#6B7280]"
+                className="w-full pl-10 pr-4 py-2 text-xs rounded-full bg-gray-100 dark:bg-gray-800/90 text-[#111827] dark:text-gray-100 border border-transparent focus:border-gray-300 dark:focus:border-gray-600 focus:outline-none focus:bg-white dark:focus:bg-gray-900 transition-all placeholder:text-[#6B7280] dark:placeholder:text-gray-400"
               />
-              <Search className="w-4 h-4 text-[#6B7280] absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-[#6B7280] dark:text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6B7280] hover:text-[#111827] text-xs p-1"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6B7280] dark:text-gray-400 hover:text-[#111827] dark:hover:text-white text-xs p-1"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -157,33 +187,33 @@ export const Navbar: React.FC = () => {
 
             {/* Instant Autocomplete Dropdown */}
             {isSearchFocused && searchQuery.trim().length > 0 && (
-              <div className="absolute top-full mt-2 left-0 right-0 bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden z-50 p-2 space-y-1">
+              <div className="absolute top-full mt-2 left-0 right-0 bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800 overflow-hidden z-50 p-2 space-y-1">
                 {searchMatches.length > 0 ? (
                   searchMatches.map((product) => (
                     <div
                       key={product.id}
                       onClick={() => handleSelectSearchResult(product)}
-                      className="p-2.5 rounded-xl hover:bg-gray-50 flex items-center gap-3 cursor-pointer transition-colors"
+                      className="p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/80 flex items-center gap-3 cursor-pointer transition-colors"
                     >
                       <img
                         src={product.images[0]}
                         alt=""
-                        className="w-10 h-10 rounded-lg object-cover bg-gray-100 shrink-0"
+                        className="w-10 h-10 rounded-lg object-cover bg-gray-100 dark:bg-gray-800 shrink-0"
                         referrerPolicy="no-referrer"
                       />
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-semibold text-gray-900 truncate">
+                        <h4 className="text-xs font-semibold text-gray-900 dark:text-gray-100 truncate">
                           {product.name}
                         </h4>
-                        <p className="text-[11px] text-gray-500 truncate">{product.subtitle}</p>
+                        <p className="text-[11px] text-gray-500 dark:text-gray-400 truncate">{product.subtitle}</p>
                       </div>
-                      <span className="text-xs font-bold text-blue-600">
+                      <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
                         ${product.price.toFixed(2)}
                       </span>
                     </div>
                   ))
                 ) : (
-                  <div className="p-4 text-center text-xs text-gray-500">
+                  <div className="p-4 text-center text-xs text-gray-500 dark:text-gray-400">
                     No merch found matching "{searchQuery}"
                   </div>
                 )}
@@ -193,13 +223,27 @@ export const Navbar: React.FC = () => {
 
           {/* Right Action Icons */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Dark / Light Mode Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all cursor-pointer active:scale-90 flex items-center justify-center"
+              aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+              title={isDark ? "Switch to light theme" : "Switch to dark theme"}
+            >
+              {isDark ? (
+                <Sun className="w-5 h-5 text-amber-400 transition-transform duration-300 rotate-0 hover:rotate-90" />
+              ) : (
+                <Moon className="w-5 h-5 text-indigo-600 transition-transform duration-300 rotate-0 hover:-rotate-12" />
+              )}
+            </button>
+
             {/* Wishlist Button */}
             <button
               onClick={() => {
                 setSelectedCategory('All');
                 setCurrentPage('shop');
               }}
-              className="relative p-2.5 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+              className="relative p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               aria-label="Wishlist"
               title="View Wishlist"
             >
@@ -214,12 +258,12 @@ export const Navbar: React.FC = () => {
             {/* Cart Button with Count */}
             <button
               onClick={() => setIsCartDrawerOpen(true)}
-              className="relative p-2 sm:px-3 sm:py-2 rounded-full bg-[#111827] hover:bg-black text-white shadow-xs flex items-center gap-2 transition-colors cursor-pointer"
+              className="relative px-3 py-2 rounded-full bg-white/80 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-800 text-[#111827] dark:text-white border border-gray-200/90 dark:border-gray-700 shadow-2xs flex items-center gap-2 transition-all cursor-pointer active:scale-95"
               aria-label="Open Cart"
             >
-              <ShoppingBag className="w-4 h-4" />
-              <span className="hidden sm:inline text-xs font-semibold">Bag</span>
-              <span className="w-4 h-4 bg-[#2563EB] text-white rounded-full text-[10px] font-bold flex items-center justify-center">
+              <ShoppingBag className="w-4 h-4 text-[#2563EB] dark:text-blue-400" />
+              <span className="hidden sm:inline text-xs font-bold">Bag</span>
+              <span className="min-w-4 h-4 px-1 bg-[#2563EB] text-white rounded-full text-[10px] font-black flex items-center justify-center">
                 {totalItemsCount}
               </span>
             </button>
@@ -227,7 +271,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Menu Hamburger */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2.5 rounded-xl text-gray-700 hover:bg-gray-100 md:hidden transition-colors"
+              className="p-2.5 rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 md:hidden transition-colors"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -238,7 +282,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white p-4 space-y-4 shadow-xl">
+        <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 space-y-4 shadow-xl rounded-b-2xl mt-1">
           {/* Search Input Mobile */}
           <div className="relative">
             <input
@@ -246,75 +290,86 @@ export const Navbar: React.FC = () => {
               placeholder="Search products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-xs rounded-xl bg-gray-100 border border-gray-200"
+              className="w-full pl-9 pr-4 py-2 text-xs rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 placeholder:text-gray-400"
             />
             <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
           </div>
 
-          <nav className="flex flex-col space-y-2 text-sm font-semibold text-gray-800">
+          <nav className="flex flex-col space-y-1 text-sm font-semibold text-gray-800 dark:text-gray-200">
             <button
               onClick={() => {
                 setCurrentPage('home');
                 setIsMobileMenuOpen(false);
               }}
-              className="py-2 px-3 rounded-lg text-left hover:bg-gray-50"
+              className={`py-2.5 px-3.5 rounded-xl text-left transition-colors flex items-center justify-between ${
+                currentPage === 'home' ? 'bg-blue-50 dark:bg-blue-900/30 text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-gray-800'
+              }`}
             >
-              Home Page
+              <span>Home</span>
             </button>
+
             <button
               onClick={() => {
                 setSelectedCategory('All');
                 setCurrentPage('shop');
                 setIsMobileMenuOpen(false);
               }}
-              className="py-2 px-3 rounded-lg text-left hover:bg-gray-50 flex items-center justify-between"
+              className={`py-2.5 px-3.5 rounded-xl text-left transition-colors flex items-center justify-between ${
+                currentPage === 'shop' ? 'bg-blue-50 dark:bg-blue-900/30 text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-gray-800'
+              }`}
             >
-              <span>Shop All Merch</span>
+              <span>Shop Catalog</span>
               <ArrowRight className="w-4 h-4 text-gray-400" />
             </button>
+
             <button
               onClick={() => {
-                setSelectedCategory('Apparel');
-                setCurrentPage('shop');
+                setCurrentPage('our-story');
                 setIsMobileMenuOpen(false);
               }}
-              className="py-2 px-3 rounded-lg text-left hover:bg-gray-50 text-gray-600 pl-6"
+              className={`py-2.5 px-3.5 rounded-xl text-left transition-colors flex items-center justify-between ${
+                currentPage === 'our-story' ? 'bg-blue-50 dark:bg-blue-900/30 text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-gray-800'
+              }`}
             >
-              Apparel & Hoodies
+              <span>Our Story</span>
             </button>
+
             <button
               onClick={() => {
-                setSelectedCategory('Smart Tech');
-                setCurrentPage('shop');
+                setCurrentPage('contact-faq');
                 setIsMobileMenuOpen(false);
               }}
-              className="py-2 px-3 rounded-lg text-left hover:bg-gray-50 text-gray-600 pl-6"
+              className={`py-2.5 px-3.5 rounded-xl text-left transition-colors flex items-center justify-between ${
+                currentPage === 'contact-faq' ? 'bg-blue-50 dark:bg-blue-900/30 text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-gray-800'
+              }`}
             >
-              Smart Tech & Mugs
+              <span>Contact & FAQ</span>
             </button>
-            <button
-              onClick={() => {
-                setSelectedCategory('Desk Essentials');
-                setCurrentPage('shop');
-                setIsMobileMenuOpen(false);
-              }}
-              className="py-2 px-3 rounded-lg text-left hover:bg-gray-50 text-gray-600 pl-6"
-            >
-              Desk Gear & Mats
-            </button>
-            <button
-              onClick={() => {
-                setIsGA4ModalOpen(true);
-                setIsMobileMenuOpen(false);
-              }}
-              className="py-2.5 px-3 rounded-xl bg-blue-50 text-blue-700 font-bold text-xs flex items-center gap-2 mt-2"
-            >
-              <BarChart2 className="w-4 h-4" />
-              <span>GA4 Analytics Improvement Strategy</span>
-            </button>
+
+            {/* Theme Toggle Mobile Row */}
+            <div className="pt-2 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between px-3.5 py-2">
+              <span className="text-xs text-gray-500 dark:text-gray-400">Appearance Mode</span>
+              <button
+                onClick={toggleTheme}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-xs font-bold text-gray-800 dark:text-gray-200"
+              >
+                {isDark ? (
+                  <>
+                    <Sun className="w-4 h-4 text-amber-400" />
+                    <span>Light Mode</span>
+                  </>
+                ) : (
+                  <>
+                    <Moon className="w-4 h-4 text-indigo-600" />
+                    <span>Dark Mode</span>
+                  </>
+                )}
+              </button>
+            </div>
           </nav>
         </div>
       )}
     </header>
   );
 };
+

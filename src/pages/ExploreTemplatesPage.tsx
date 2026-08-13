@@ -84,7 +84,7 @@ export const ExploreTemplatesPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] pb-24 text-[#111827]">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-gray-950 pb-24 text-[#111827] dark:text-white transition-colors">
       {/* Wix Explore Header Bar */}
       <div className="bg-[#111827] text-white border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4 text-xs">
@@ -116,18 +116,18 @@ export const ExploreTemplatesPage: React.FC = () => {
       </div>
 
       {/* Hero Showcase Section */}
-      <div className="relative bg-gradient-to-b from-white via-slate-50 to-[#F8FAFC] border-b border-gray-200/80 pt-10 pb-12 overflow-hidden">
+      <div className="relative bg-gradient-to-b from-white via-slate-50 to-[#F8FAFC] dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 border-b border-gray-200/80 dark:border-gray-800 pt-10 pb-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#2563EB] text-xs font-extrabold uppercase tracking-wider">
-            <Sparkles className="w-4 h-4 text-[#2563EB]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/50 text-[#2563EB] dark:text-blue-400 text-xs font-extrabold uppercase tracking-wider">
+            <Sparkles className="w-4 h-4 text-[#2563EB] dark:text-blue-400" />
             <span>Wix eCommerce Showcase for Google Merch Shop</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black text-[#111827] tracking-tight max-w-4xl mx-auto leading-tight">
-            Pick the E-Commerce Template You Love for <span className="text-[#2563EB]">Google Merch Shop</span>
+          <h1 className="text-3xl sm:text-5xl font-black text-[#111827] dark:text-white tracking-tight max-w-4xl mx-auto leading-tight">
+            Pick the E-Commerce Template You Love for <span className="text-[#2563EB] dark:text-blue-400">Google Merch Shop</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-[#6B7280] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-[#6B7280] dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Select from professionally designed, high-converting Google Merch storefront templates. Customize themes live in our Studio Editor or launch immediately into the live shopping store.
           </p>
 
@@ -140,11 +140,11 @@ export const ExploreTemplatesPage: React.FC = () => {
                 placeholder="Search Google Merch templates (e.g., Editorial, Pixel, Dark Mode, GA4, Developer)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-32 py-4 rounded-full bg-white border border-gray-200 shadow-sm focus:outline-none focus:border-[#2563EB] focus:ring-4 focus:ring-blue-50 text-xs sm:text-sm text-[#111827] placeholder-gray-400 font-medium"
+                className="w-full pl-12 pr-32 py-4 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm focus:outline-none focus:border-[#2563EB] focus:ring-4 focus:ring-blue-50 dark:focus:ring-blue-950 text-xs sm:text-sm text-[#111827] dark:text-white placeholder-gray-400 font-medium"
               />
               <button
                 onClick={() => setIsAIWizardOpen(true)}
-                className="absolute right-2.5 py-2.5 px-5 bg-[#111827] hover:bg-black text-white font-bold text-xs rounded-full flex items-center gap-2 transition-all cursor-pointer shadow-xs"
+                className="absolute right-2.5 py-2.5 px-5 bg-[#111827] dark:bg-blue-600 hover:bg-black dark:hover:bg-blue-700 text-white font-bold text-xs rounded-full flex items-center gap-2 transition-all cursor-pointer shadow-xs"
               >
                 <Wand2 className="w-4 h-4 text-amber-400" />
                 <span className="hidden sm:inline">Build with AI</span>
@@ -152,13 +152,13 @@ export const ExploreTemplatesPage: React.FC = () => {
             </div>
 
             {/* Quick Stats Banner */}
-            <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-[#6B7280] pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-[#6B7280] dark:text-gray-400 pt-2">
               <span className="flex items-center gap-1.5 font-semibold">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 100% Mobile Responsive
               </span>
               <span className="flex items-center gap-1.5 font-semibold">
-                <ShieldCheck className="w-4 h-4 text-[#2563EB]" />
+                <ShieldCheck className="w-4 h-4 text-[#2563EB] dark:text-blue-400" />
                 GA4 Analytics Integrated
               </span>
               <span className="flex items-center gap-1.5 font-semibold">
@@ -166,7 +166,7 @@ export const ExploreTemplatesPage: React.FC = () => {
                 Sub-Second Page Speed
               </span>
               <span className="flex items-center gap-1.5 font-semibold">
-                <ShoppingBag className="w-4 h-4 text-purple-600" />
+                <ShoppingBag className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                 1-Click GPay & Express Bag
               </span>
             </div>
@@ -178,7 +178,7 @@ export const ExploreTemplatesPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-8">
         {/* Category Tabs & Filter Bar */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between border-b border-gray-200 pb-3 overflow-x-auto gap-4">
+          <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 pb-3 overflow-x-auto gap-4">
             <div className="flex items-center gap-2 shrink-0">
               {categories.map((cat) => (
                 <button
@@ -187,7 +187,7 @@ export const ExploreTemplatesPage: React.FC = () => {
                   className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
                     selectedCategory === cat
                       ? 'bg-[#2563EB] text-white shadow-xs'
-                      : 'bg-white text-[#6B7280] hover:text-[#111827] hover:bg-gray-100 border border-gray-200/80'
+                      : 'bg-white dark:bg-gray-900 text-[#6B7280] dark:text-gray-300 hover:text-[#111827] dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200/80 dark:border-gray-800'
                   }`}
                 >
                   {cat}
@@ -196,13 +196,13 @@ export const ExploreTemplatesPage: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-3 shrink-0">
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280]">
-                <SlidersHorizontal className="w-4 h-4 text-[#2563EB]" />
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] dark:text-gray-400">
+                <SlidersHorizontal className="w-4 h-4 text-[#2563EB] dark:text-blue-400" />
                 <span className="hidden sm:inline">Sort:</span>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="bg-white border border-gray-200 text-[#111827] text-xs font-bold py-1.5 px-3 rounded-full focus:outline-none focus:border-[#2563EB]"
+                  className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-[#111827] dark:text-white text-xs font-bold py-1.5 px-3 rounded-full focus:outline-none focus:border-[#2563EB]"
                 >
                   <option value="recommended">Recommended</option>
                   <option value="popular">Most Popular</option>
@@ -215,7 +215,7 @@ export const ExploreTemplatesPage: React.FC = () => {
 
           {/* Secondary Design Style Filter */}
           <div className="flex flex-wrap items-center gap-2 text-xs">
-            <span className="text-[#6B7280] font-bold mr-1 flex items-center gap-1">
+            <span className="text-[#6B7280] dark:text-gray-400 font-bold mr-1 flex items-center gap-1">
               <Filter className="w-3.5 h-3.5 text-gray-400" />
               Design Style:
             </span>
@@ -225,8 +225,8 @@ export const ExploreTemplatesPage: React.FC = () => {
                 onClick={() => setSelectedStyle(st)}
                 className={`px-3 py-1 rounded-full text-[11px] font-semibold transition-all cursor-pointer ${
                   selectedStyle === st
-                    ? 'bg-[#111827] text-white'
-                    : 'bg-gray-100 text-[#6B7280] hover:bg-gray-200'
+                    ? 'bg-[#111827] dark:bg-blue-600 text-white'
+                    : 'bg-gray-100 dark:bg-gray-800 text-[#6B7280] dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                 }`}
               >
                 {st}
@@ -236,12 +236,12 @@ export const ExploreTemplatesPage: React.FC = () => {
         </div>
 
         {/* Templates Count Header */}
-        <div className="flex items-center justify-between text-xs text-[#6B7280]">
+        <div className="flex items-center justify-between text-xs text-[#6B7280] dark:text-gray-400">
           <p>
-            Showing <strong className="text-[#111827] font-bold">{filteredTemplates.length}</strong> Google Merch store templates
+            Showing <strong className="text-[#111827] dark:text-white font-bold">{filteredTemplates.length}</strong> Google Merch store templates
           </p>
           {activeTemplate && (
-            <div className="flex items-center gap-2 bg-blue-50 text-[#2563EB] px-3 py-1 rounded-full border border-blue-100 font-bold">
+            <div className="flex items-center gap-2 bg-blue-50 dark:bg-blue-950/60 text-[#2563EB] dark:text-blue-400 px-3 py-1 rounded-full border border-blue-100 dark:border-blue-900/50 font-bold">
               <span>Active Template: {activeTemplate.name}</span>
               <button 
                 onClick={() => handleCustomizeInStudio(activeTemplate)}
@@ -261,10 +261,10 @@ export const ExploreTemplatesPage: React.FC = () => {
             return (
               <div
                 key={template.id}
-                className={`bg-white rounded-[32px] border transition-all duration-300 flex flex-col overflow-hidden group shadow-xs hover:shadow-xl ${
+                className={`bg-white dark:bg-gray-900 rounded-[32px] border transition-all duration-300 flex flex-col overflow-hidden group shadow-xs hover:shadow-xl ${
                   isActive 
-                    ? 'border-[#2563EB] ring-2 ring-blue-100' 
-                    : 'border-gray-200/80 hover:border-gray-300'
+                    ? 'border-[#2563EB] ring-2 ring-blue-100 dark:ring-blue-900' 
+                    : 'border-gray-200/80 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700'
                 }`}
               >
                 {/* Template Image Preview Frame */}
@@ -310,9 +310,9 @@ export const ExploreTemplatesPage: React.FC = () => {
 
                     <button
                       onClick={() => handleCustomizeInStudio(template)}
-                      className="w-full py-3 bg-white hover:bg-gray-100 text-[#111827] font-extrabold text-xs rounded-full shadow-md flex items-center justify-center gap-2 transition-transform hover:scale-105 cursor-pointer"
+                      className="w-full py-3 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-[#111827] dark:text-white font-extrabold text-xs rounded-full shadow-md flex items-center justify-center gap-2 transition-transform hover:scale-105 cursor-pointer"
                     >
-                      <Sliders className="w-4 h-4 text-[#2563EB]" />
+                      <Sliders className="w-4 h-4 text-[#2563EB] dark:text-blue-400" />
                       <span>Edit in Studio</span>
                     </button>
 
@@ -330,7 +330,7 @@ export const ExploreTemplatesPage: React.FC = () => {
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                   <div>
                     <div className="flex items-center justify-between text-xs mb-1.5">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#2563EB]">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#2563EB] dark:text-blue-400">
                         {template.category}
                       </span>
                       <div className="flex items-center gap-1 text-amber-500 font-bold">
@@ -340,22 +340,22 @@ export const ExploreTemplatesPage: React.FC = () => {
                       </div>
                     </div>
 
-                    <h3 className="text-base font-extrabold text-[#111827] group-hover:text-[#2563EB] transition-colors leading-snug">
+                    <h3 className="text-base font-extrabold text-[#111827] dark:text-white group-hover:text-[#2563EB] dark:group-hover:text-blue-400 transition-colors leading-snug">
                       {template.name}
                     </h3>
 
-                    <p className="text-xs text-[#6B7280] mt-1 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-[#6B7280] dark:text-gray-400 mt-1 line-clamp-2 leading-relaxed">
                       {template.tagline}
                     </p>
                   </div>
 
                   {/* Color Palette Dots */}
-                  <div className="flex items-center justify-between pt-2 border-t border-gray-100">
+                  <div className="flex items-center justify-between pt-2 border-t border-gray-100 dark:border-gray-800">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[10px] text-[#6B7280] font-bold mr-1">Palette:</span>
-                      <span className="w-3.5 h-3.5 rounded-full border border-gray-200 shadow-2xs" style={{ backgroundColor: template.colorPalette.primary }} title="Primary Color" />
-                      <span className="w-3.5 h-3.5 rounded-full border border-gray-200 shadow-2xs" style={{ backgroundColor: template.colorPalette.secondary }} title="Secondary Accent" />
-                      <span className="w-3.5 h-3.5 rounded-full border border-gray-200 shadow-2xs" style={{ backgroundColor: template.colorPalette.surface }} title="Surface Neutral" />
+                      <span className="text-[10px] text-[#6B7280] dark:text-gray-400 font-bold mr-1">Palette:</span>
+                      <span className="w-3.5 h-3.5 rounded-full border border-gray-200 dark:border-gray-700 shadow-2xs" style={{ backgroundColor: template.colorPalette.primary }} title="Primary Color" />
+                      <span className="w-3.5 h-3.5 rounded-full border border-gray-200 dark:border-gray-700 shadow-2xs" style={{ backgroundColor: template.colorPalette.secondary }} title="Secondary Accent" />
+                      <span className="w-3.5 h-3.5 rounded-full border border-gray-200 dark:border-gray-700 shadow-2xs" style={{ backgroundColor: template.colorPalette.surface }} title="Surface Neutral" />
                     </div>
 
                     <span className="text-[11px] text-gray-400 font-semibold">
@@ -366,8 +366,8 @@ export const ExploreTemplatesPage: React.FC = () => {
                   {/* Features Highlights */}
                   <div className="space-y-1.5 pt-1">
                     {template.features.slice(0, 2).map((feat, i) => (
-                      <div key={i} className="flex items-center gap-2 text-[11px] text-[#111827] font-medium">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <div key={i} className="flex items-center gap-2 text-[11px] text-[#111827] dark:text-gray-200 font-medium">
+                        <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                         <span className="truncate">{feat}</span>
                       </div>
                     ))}
@@ -384,7 +384,7 @@ export const ExploreTemplatesPage: React.FC = () => {
                     </button>
                     <button
                       onClick={() => handleCustomizeInStudio(template)}
-                      className="py-2.5 px-4 bg-gray-100 hover:bg-gray-200 text-[#111827] font-bold text-xs rounded-full transition-colors cursor-pointer"
+                      className="py-2.5 px-4 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-[#111827] dark:text-white font-bold text-xs rounded-full transition-colors cursor-pointer"
                     >
                       Edit
                     </button>
@@ -397,10 +397,10 @@ export const ExploreTemplatesPage: React.FC = () => {
 
         {/* Empty Search State */}
         {filteredTemplates.length === 0 && (
-          <div className="text-center py-16 bg-white rounded-[32px] border border-gray-200 p-8 space-y-4">
-            <Layout className="w-12 h-12 text-gray-300 mx-auto" />
-            <h3 className="text-lg font-extrabold text-[#111827]">No templates found matching "{searchQuery}"</h3>
-            <p className="text-xs text-[#6B7280]">Try clearing search filters or generate a custom store layout with AI.</p>
+          <div className="text-center py-16 bg-white dark:bg-gray-900 rounded-[32px] border border-gray-200 dark:border-gray-800 p-8 space-y-4">
+            <Layout className="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto" />
+            <h3 className="text-lg font-extrabold text-[#111827] dark:text-white">No templates found matching "{searchQuery}"</h3>
+            <p className="text-xs text-[#6B7280] dark:text-gray-400">Try clearing search filters or generate a custom store layout with AI.</p>
             <button
               onClick={() => {
                 setSearchQuery('');

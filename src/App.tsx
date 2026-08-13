@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShopProvider, useShop } from './context/ShopContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { QuickViewModal } from './components/QuickViewModal';
@@ -11,6 +12,8 @@ import { WixAIWizardModal } from './components/WixAIWizardModal';
 import { DevicePreviewModal } from './components/DevicePreviewModal';
 import { HomePage } from './pages/HomePage';
 import { ShopPage } from './pages/ShopPage';
+import { OurStoryPage } from './pages/OurStoryPage';
+import { ContactFaqPage } from './pages/ContactFaqPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { CartPage } from './pages/CartPage';
 import { CheckoutPage } from './pages/CheckoutPage';
@@ -19,12 +22,14 @@ const MainContent: React.FC = () => {
   const { currentPage } = useShop();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F3F4F6] font-sans text-[#111827] antialiased selection:bg-[#2563EB] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#F3F4F6] dark:bg-[#0B0F17] font-sans text-[#111827] dark:text-[#F3F4F6] antialiased selection:bg-[#2563EB] selection:text-white transition-colors duration-300">
       <Navbar />
 
       <main className="flex-1">
         {currentPage === 'home' && <HomePage />}
         {currentPage === 'shop' && <ShopPage />}
+        {currentPage === 'our-story' && <OurStoryPage />}
+        {currentPage === 'contact-faq' && <ContactFaqPage />}
         {currentPage === 'product-detail' && <ProductDetailPage />}
         {currentPage === 'cart' && <CartPage />}
         {currentPage === 'checkout' && <CheckoutPage />}
@@ -46,8 +51,11 @@ const MainContent: React.FC = () => {
 
 export default function App() {
   return (
-    <ShopProvider>
-      <MainContent />
-    </ShopProvider>
+    <ThemeProvider>
+      <ShopProvider>
+        <MainContent />
+      </ShopProvider>
+    </ThemeProvider>
   );
 }
+

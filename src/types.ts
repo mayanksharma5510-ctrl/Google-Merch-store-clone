@@ -105,4 +105,4 @@ export interface Order {
   trackingNumber: string;
 }
 
-export type ViewPage = 'home' | 'shop' | 'product-detail' | 'cart' | 'checkout' | 'templates-explore';
+export type ViewPage = 'home' | 'shop' | 'our-story' | 'contact-faq' | 'product-detail' | 'cart' | 'checkout' | 'templates-explore';

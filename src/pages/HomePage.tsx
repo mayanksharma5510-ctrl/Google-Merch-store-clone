@@ -56,34 +56,24 @@ export const HomePage: React.FC = () => {
         {/* Left Hero Main Card */}
         <motion.section
           variants={itemVariants}
-          className="lg:col-span-7 bg-white rounded-[32px] p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden shadow-xs border border-gray-200/80 group"
+          className="lg:col-span-7 bg-white dark:bg-gray-900 rounded-[32px] p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden shadow-xs border border-gray-200/80 dark:border-gray-800 group"
         >
           <div className="relative z-10 space-y-6">
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.1, duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 text-[#2563EB] text-xs font-bold rounded-full border border-blue-100"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-pulse" />
-              <span>Official Google Merch Collection</span>
-            </motion.div>
-
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight text-[#111827]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight text-[#111827] dark:text-white"
             >
-              Smart Merch.<br />
-              <span className="text-[#2563EB]">Designed for Creators.</span>
+              Smart Merch<br />
+              <span className="text-[#2563EB]">Designed For Creators.</span>
             </motion.h1>
 
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-[#6B7280] text-sm sm:text-base max-w-lg leading-relaxed font-normal"
+              className="text-[#6B7280] dark:text-gray-300 text-sm sm:text-base max-w-lg leading-relaxed font-normal"
             >
               Elevate your daily workflow with official Google organic apparel, smart temperature drinkware, modular tech bags, and tactile desktop accessories.
             </motion.p>
@@ -110,7 +100,7 @@ export const HomePage: React.FC = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={scrollToBestSellers}
-                className="px-7 py-3.5 bg-gray-50 border border-gray-300 text-[#111827] text-xs sm:text-sm font-bold rounded-full hover:bg-white hover:border-gray-400 transition-all cursor-pointer flex items-center gap-2"
+                className="px-7 py-3.5 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-[#111827] dark:text-white text-xs sm:text-sm font-bold rounded-full hover:bg-white dark:hover:bg-gray-700 hover:border-gray-400 transition-all cursor-pointer flex items-center gap-2"
               >
                 <Flame className="w-4 h-4 text-amber-500 fill-amber-500 animate-bounce" />
                 <span>Explore Best Sellers</span>
@@ -122,18 +112,18 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="pt-8 mt-8 border-t border-gray-100 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left relative z-10"
+            className="pt-8 mt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left relative z-10"
           >
-            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280]">
-              <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] dark:text-gray-300">
+              <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
               <span>Free Ship Over $75</span>
             </div>
-            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280]">
-              <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] dark:text-gray-300">
+              <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
               <span>30-Day Easy Returns</span>
             </div>
-            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280]">
-              <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] dark:text-gray-300">
+              <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
               <span>100% Organic & Ethically Made</span>
             </div>
           </motion.div>
@@ -182,8 +172,8 @@ export const HomePage: React.FC = () => {
                 <span className="text-sm text-gray-400 line-through">
                   ${FEATURED_BUNDLE.originalTotalPrice.toFixed(2)}
                 </span>
-                <span className="px-2.5 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold rounded-full">
-                  Save ${FEATURED_BUNDLE.savings.toFixed(0)}
+                <span className="px-2.5 py-0.5 bg-red-600 text-white font-black text-[10px] uppercase tracking-wider rounded-full shadow-xs animate-pulse">
+                  SAVE ${FEATURED_BUNDLE.savings.toFixed(0)} OFF
                 </span>
               </div>
             </div>
@@ -227,30 +217,30 @@ export const HomePage: React.FC = () => {
         transition={{ duration: 0.6 }}
         className="space-y-6 pt-2 scroll-mt-24"
       >
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-gray-200/80 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-gray-200/80 dark:border-gray-800 pb-4">
           <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className="p-1.5 bg-amber-100 rounded-lg text-amber-600">
+              <span className="p-1.5 bg-amber-100 dark:bg-amber-900/40 rounded-lg text-amber-600 dark:text-amber-400">
                 <Flame className="w-4 h-4 fill-amber-500 animate-pulse" />
               </span>
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#2563EB]">
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#2563EB] dark:text-blue-400">
                 Top Customer Favorites
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] dark:text-white tracking-tight">
               Best Sellers
             </h2>
-            <p className="text-xs sm:text-sm text-[#6B7280]">
+            <p className="text-xs sm:text-sm text-[#6B7280] dark:text-gray-400">
               Highest-rated merchandise chosen by tech enthusiasts & creators worldwide.
             </p>
           </div>
 
           <button
             onClick={handleShopNewArrivals}
-            className="px-5 py-2.5 bg-white border border-gray-300 hover:border-gray-400 text-[#111827] text-xs font-bold rounded-full transition-all cursor-pointer flex items-center gap-2 self-start sm:self-auto hover:bg-gray-50 active:scale-95"
+            className="px-5 py-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 text-[#111827] dark:text-white text-xs font-bold rounded-full transition-all cursor-pointer flex items-center gap-2 self-start sm:self-auto hover:bg-gray-50 dark:hover:bg-gray-700 active:scale-95"
           >
             <span>View Full Catalog</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#2563EB]" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#2563EB] dark:text-blue-400" />
           </button>
         </div>
 
@@ -279,18 +269,18 @@ export const HomePage: React.FC = () => {
         transition={{ duration: 0.6 }}
         className="space-y-6 pt-4"
       >
-        <div className="flex items-end justify-between border-b border-gray-200/80 pb-4">
+        <div className="flex items-end justify-between border-b border-gray-200/80 dark:border-gray-800 pb-4">
           <div>
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#2563EB]">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#2563EB] dark:text-blue-400">
               Shop By Category
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] dark:text-white tracking-tight">
               Curated Collections
             </h2>
           </div>
           <button
             onClick={handleShopNewArrivals}
-            className="text-xs font-bold text-[#2563EB] hover:underline flex items-center gap-1 cursor-pointer"
+            className="text-xs font-bold text-[#2563EB] dark:text-blue-400 hover:underline flex items-center gap-1 cursor-pointer"
           >
             <span>All Categories</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -335,7 +325,7 @@ export const HomePage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -6 }}
-              className="group relative h-80 rounded-[28px] overflow-hidden border border-gray-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-end p-6"
+              className="group relative h-80 rounded-[28px] overflow-hidden border border-gray-200/80 dark:border-gray-800 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-end p-6"
             >
               {/* Background Image */}
               <img
@@ -385,10 +375,10 @@ export const HomePage: React.FC = () => {
         className="space-y-6 pt-4"
       >
         <div className="text-center max-w-xl mx-auto space-y-2">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-[#2563EB]">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-[#2563EB] dark:text-blue-400">
             Verified Community Feedback
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] dark:text-white tracking-tight">
             Loved by Developers & Tech Creators
           </h2>
         </div>
@@ -402,7 +392,7 @@ export const HomePage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               whileHover={{ y: -4 }}
-              className="p-6 bg-white rounded-[28px] border border-gray-200/80 shadow-xs space-y-4 flex flex-col justify-between"
+              className="p-6 bg-white dark:bg-gray-900 rounded-[28px] border border-gray-200/80 dark:border-gray-800 shadow-xs space-y-4 flex flex-col justify-between"
             >
               <div className="space-y-2">
                 <div className="flex items-center gap-1 text-amber-400">
@@ -410,11 +400,11 @@ export const HomePage: React.FC = () => {
                     <Star key={idx} className="w-4 h-4 fill-current" />
                   ))}
                 </div>
-                <h4 className="text-sm font-bold text-[#111827]">{rev.title}</h4>
-                <p className="text-xs text-[#6B7280] leading-relaxed">{rev.comment}</p>
+                <h4 className="text-sm font-bold text-[#111827] dark:text-white">{rev.title}</h4>
+                <p className="text-xs text-[#6B7280] dark:text-gray-300 leading-relaxed">{rev.comment}</p>
               </div>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+              <div className="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-gray-800">
                 <img
                   src={rev.userAvatar}
                   alt={rev.userName}
@@ -423,10 +413,10 @@ export const HomePage: React.FC = () => {
                 />
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <span className="text-xs font-bold text-[#111827]">{rev.userName}</span>
-                    <HeartHandshake className="w-3.5 h-3.5 text-[#2563EB]" />
+                    <span className="text-xs font-bold text-[#111827] dark:text-white">{rev.userName}</span>
+                    <HeartHandshake className="w-3.5 h-3.5 text-[#2563EB] dark:text-blue-400" />
                   </div>
-                  <span className="text-[10px] text-[#6B7280]">Verified Buyer • {rev.date}</span>
+                  <span className="text-[10px] text-[#6B7280] dark:text-gray-400">Verified Buyer • {rev.date}</span>
                 </div>
               </div>
             </motion.div>
