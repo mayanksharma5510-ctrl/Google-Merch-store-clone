@@ -1,0 +1,6 @@
+{
+  "name": "Google Merch Shop",
+  "description": "Smart merch. Faster checkout. Modern, conversion-focused e-commerce experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

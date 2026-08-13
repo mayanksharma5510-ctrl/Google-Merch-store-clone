@@ -1,0 +1,47 @@
+import React from 'react';
+import { ShopProvider, useShop } from './context/ShopContext';
+import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
+import { QuickViewModal } from './components/QuickViewModal';
+import { CartDrawer } from './components/CartDrawer';
+import { GA4StrategyModal } from './components/GA4StrategyModal';
+import { Toast } from './components/Toast';
+import { HomePage } from './pages/HomePage';
+import { ShopPage } from './pages/ShopPage';
+import { ProductDetailPage } from './pages/ProductDetailPage';
+import { CartPage } from './pages/CartPage';
+import { CheckoutPage } from './pages/CheckoutPage';
+
+const MainContent: React.FC = () => {
+  const { currentPage } = useShop();
+
+  return (
+    <div className="min-h-screen flex flex-col bg-[#F3F4F6] font-sans text-[#111827] antialiased selection:bg-[#2563EB] selection:text-white">
+      <Navbar />
+
+      <main className="flex-1">
+        {currentPage === 'home' && <HomePage />}
+        {currentPage === 'shop' && <ShopPage />}
+        {currentPage === 'product-detail' && <ProductDetailPage />}
+        {currentPage === 'cart' && <CartPage />}
+        {currentPage === 'checkout' && <CheckoutPage />}
+      </main>
+
+      <Footer />
+
+      {/* Global Modals & Drawers */}
+      <QuickViewModal />
+      <CartDrawer />
+      <GA4StrategyModal />
+      <Toast />
+    </div>
+  );
+};
+
+export default function App() {
+  return (
+    <ShopProvider>
+      <MainContent />
+    </ShopProvider>
+  );
+}
