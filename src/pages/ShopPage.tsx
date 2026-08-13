@@ -5,7 +5,7 @@ import { Category } from '../types';
 import { PRODUCTS } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
 
-const CATEGORIES: Category[] = ['All', 'Apparel', 'Smart Tech', 'Desk Essentials', 'Drinkware', 'Accessories'];
+const CATEGORIES: Category[] = ['All', 'Apparel', 'Smart Tech', 'Desk Essentials', 'Drinkware', 'Accessories', 'Bags'];
 
 export const ShopPage: React.FC = () => {
   const {

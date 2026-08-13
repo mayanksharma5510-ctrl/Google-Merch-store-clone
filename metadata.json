@@ -1,6 +1,6 @@
 {
   "name": "Google Merch Shop",
-  "description": "Smart merch. Faster checkout. Modern, conversion-focused e-commerce experience.",
+  "description": "Full-stack Google Merch Shop with smart checkout, product catalog, and interactive storefront customizer.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -157,7 +157,7 @@ export const PRODUCTS: Product[] = [
     tagline: 'Built for modern tech nomads who demand weather resistance and organization.',
     price: 128.00,
     originalPrice: 150.00,
-    category: 'Accessories',
+    category: 'Bags',
     rating: 4.85,
     reviewCount: 189,
     badge: 'New',

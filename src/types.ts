@@ -1,4 +1,4 @@
-export type Category = 'All' | 'Apparel' | 'Smart Tech' | 'Desk Essentials' | 'Drinkware' | 'Accessories';
+export type Category = 'All' | 'Apparel' | 'Smart Tech' | 'Desk Essentials' | 'Drinkware' | 'Accessories' | 'Bags';
 
 export interface ProductOption {
   color?: string;
@@ -105,4 +105,4 @@ export interface Order {
   trackingNumber: string;
 }
 
-export type ViewPage = 'home' | 'shop' | 'product-detail' | 'cart' | 'checkout';
+export type ViewPage = 'home' | 'shop' | 'product-detail' | 'cart' | 'checkout' | 'templates-explore';

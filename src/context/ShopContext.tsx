@@ -2,11 +2,24 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Product, CartItem, ViewPage, Category, PromoCode, Order, ShippingAddress, PaymentDetails } from '../types';
 import { PRODUCTS } from '../data/products';
 import { VALID_PROMO_CODES } from '../data/analytics';
+import { StoreTemplate, ECOMMERCE_TEMPLATES } from '../data/templates';
 
 interface ToastInfo {
   id: number;
   message: string;
   type: 'success' | 'info' | 'error';
+}
+
+export interface CustomThemeSettings {
+  primaryColor: string;
+  bgStyle: 'white' | 'cream' | 'slate';
+  headerStyle: 'pill' | 'solid' | 'minimal';
+  heroTitle: string;
+  heroSubtitle: string;
+  heroBadge: string;
+  gridColumns: number;
+  enableGA4Ticker: boolean;
+  cardRadius: 'full' | 'curved' | 'modern';
 }
 
 interface ShopContextType {
@@ -25,6 +38,20 @@ interface ShopContextType {
   isGA4ModalOpen: boolean;
   activeToast: ToastInfo | null;
   latestOrder: Order | null;
+
+  // Template & Studio State
+  activeTemplate: StoreTemplate;
+  themeSettings: CustomThemeSettings;
+  isStudioEditorOpen: boolean;
+  isAIWizardOpen: boolean;
+  previewDeviceTemplate: StoreTemplate | null;
+
+  // Template Actions
+  applyTemplate: (templateId: string) => void;
+  updateThemeSettings: (newSettings: Partial<CustomThemeSettings>) => void;
+  setIsStudioEditorOpen: (open: boolean) => void;
+  setIsAIWizardOpen: (open: boolean) => void;
+  setPreviewDeviceTemplate: (template: StoreTemplate | null) => void;
   
   // Navigation & UI Actions
   setCurrentPage: (page: ViewPage) => void;
@@ -107,6 +134,24 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isGA4ModalOpen, setIsGA4ModalOpen] = useState(false);
   const [activeToast, setActiveToast] = useState<ToastInfo | null>(null);
   const [latestOrder, setLatestOrder] = useState<Order | null>(null);
+
+  // Template & Studio Customizer States
+  const [activeTemplate, setActiveTemplate] = useState<StoreTemplate>(ECOMMERCE_TEMPLATES[0]);
+  const [themeSettings, setThemeSettings] = useState<CustomThemeSettings>(ECOMMERCE_TEMPLATES[0].themeSettings);
+  const [isStudioEditorOpen, setIsStudioEditorOpen] = useState(false);
+  const [isAIWizardOpen, setIsAIWizardOpen] = useState(false);
+  const [previewDeviceTemplate, setPreviewDeviceTemplate] = useState<StoreTemplate | null>(null);
+
+  const applyTemplate = (templateId: string) => {
+    const found = ECOMMERCE_TEMPLATES.find((t) => t.id === templateId) || ECOMMERCE_TEMPLATES[0];
+    setActiveTemplate(found);
+    setThemeSettings(found.themeSettings);
+    showToast(`Applied "${found.name}" template to your Google Merch Shop!`, 'success');
+  };
+
+  const updateThemeSettings = (newSettings: Partial<CustomThemeSettings>) => {
+    setThemeSettings((prev) => ({ ...prev, ...newSettings }));
+  };
 
   // Persistence
   useEffect(() => {
@@ -314,6 +359,18 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
         isGA4ModalOpen,
         activeToast,
         latestOrder,
+
+        activeTemplate,
+        themeSettings,
+        isStudioEditorOpen,
+        isAIWizardOpen,
+        previewDeviceTemplate,
+
+        applyTemplate,
+        updateThemeSettings,
+        setIsStudioEditorOpen,
+        setIsAIWizardOpen,
+        setPreviewDeviceTemplate,
 
         setCurrentPage,
         navigateToProduct,

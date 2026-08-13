@@ -6,6 +6,9 @@ import { QuickViewModal } from './components/QuickViewModal';
 import { CartDrawer } from './components/CartDrawer';
 import { GA4StrategyModal } from './components/GA4StrategyModal';
 import { Toast } from './components/Toast';
+import { WixStudioEditorModal } from './components/WixStudioEditorModal';
+import { WixAIWizardModal } from './components/WixAIWizardModal';
+import { DevicePreviewModal } from './components/DevicePreviewModal';
 import { HomePage } from './pages/HomePage';
 import { ShopPage } from './pages/ShopPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
@@ -33,6 +36,9 @@ const MainContent: React.FC = () => {
       <QuickViewModal />
       <CartDrawer />
       <GA4StrategyModal />
+      <WixStudioEditorModal />
+      <WixAIWizardModal />
+      <DevicePreviewModal />
       <Toast />
     </div>
   );
