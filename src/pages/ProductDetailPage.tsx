@@ -446,7 +446,7 @@ export const ProductDetailPage: React.FC = () => {
       )}
 
       {/* Always Visible Sticky Mobile Add-to-Cart Bottom Bar */}
-      <div className="fixed bottom-0 inset-x-0 bg-white/95 dark:bg-[#181818]/95 backdrop-blur-md border-t border-gray-200 dark:border-neutral-800 p-3 shadow-2xl z-50 sm:hidden flex items-center justify-between gap-3">
+      <div className="fixed bottom-16 inset-x-0 bg-white/95 dark:bg-[#181818]/95 backdrop-blur-md border-t border-gray-200/90 dark:border-neutral-800 p-3 shadow-2xl z-40 md:hidden flex items-center justify-between gap-3">
         <div className="min-w-0 flex-1">
           <h4 className="text-xs font-bold text-gray-900 dark:text-white truncate">{selectedProduct.name}</h4>
           <div className="flex items-center gap-2 mt-0.5">
@@ -456,10 +456,10 @@ export const ProductDetailPage: React.FC = () => {
         </div>
         <button
           onClick={handleAddToCart}
-          className="py-3 px-5 bg-[#2563EB] hover:bg-blue-700 text-white text-xs font-extrabold rounded-full shadow-md flex items-center gap-1.5 shrink-0 active:scale-95 transition-all"
+          className="py-2.5 px-5 bg-[#2563EB] hover:bg-blue-700 text-white text-xs font-extrabold rounded-full shadow-md flex items-center gap-1.5 shrink-0 active:scale-95 transition-all"
         >
           <ShoppingBag className="w-4 h-4" />
-          <span>Add to Bag</span>
+          <span>{addedSuccess ? 'Added!' : 'Add to Bag'}</span>
         </button>
       </div>
     </div>

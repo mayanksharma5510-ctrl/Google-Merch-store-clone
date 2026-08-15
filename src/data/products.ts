@@ -4,6 +4,14 @@ import googleGrayCapImg from '../assets/images/google_gray_cap_studio_1786791021
 import googleOmbrePenImg from '../assets/images/google_ombre_pen_1786790189875.jpg';
 import nanoBananaTeeImg from '../assets/images/nano_banana_tee_1786790207450.jpg';
 import chromeDinoCollectionImg from '../assets/images/chrome_dino_collection_1786790225821.jpg';
+import googleDeveloperHoodieImg from '../assets/images/google_developer_hoodie_1786792435016.jpg';
+import pixelSmartMugImg from '../assets/images/pixel_smart_mug_1786792447420.jpg';
+import tensorKeyboardImg from '../assets/images/tensor_keyboard_1786792459793.jpg';
+import cloudBackpackImg from '../assets/images/cloud_backpack_1786792472768.jpg';
+import googleGreenDinoPlushImg from '../assets/images/google_green_dino_plush_1786792663875.jpg';
+import googleDeskPadImg from '../assets/images/google_desk_pad_studio_1786792794391.jpg';
+import googleAiCeramicCupImg from '../assets/images/google_ai_ceramic_cup_1786792810425.jpg';
+import pixelPowerBankImg from '../assets/images/pixel_power_bank_studio_1786792823179.jpg';
 
 export const SAMPLE_REVIEWS: Review[] = [
   {
@@ -56,7 +64,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockLeft: 8,
     images: [
-      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&auto=format&fit=crop&q=80',
+      googleDeveloperHoodieImg,
       'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80'
     ],
@@ -94,7 +102,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockLeft: 12,
     images: [
-      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80',
+      pixelSmartMugImg,
       'https://images.unsplash.com/photo-1577937927133-66ef06acdf18?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1534653299134-96a171b61581?w=800&auto=format&fit=crop&q=80'
     ],
@@ -132,7 +140,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockLeft: 5,
     images: [
-      'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop&q=80',
+      tensorKeyboardImg,
       'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1595225476474-87563907a212?w=800&auto=format&fit=crop&q=80'
     ],
@@ -168,7 +176,7 @@ export const PRODUCTS: Product[] = [
     badge: 'New',
     inStock: true,
     images: [
-      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop&q=80',
+      cloudBackpackImg,
       'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=800&auto=format&fit=crop&q=80'
     ],
     colors: [
@@ -227,40 +235,40 @@ export const PRODUCTS: Product[] = [
     }
   },
   {
-    id: 'eco-organic-cotton-tee',
-    name: 'Google Minimalist Eco Organic Tee',
-    subtitle: 'Pre-shrunk ring-spun organic cotton with ultra-soft hand feel',
-    tagline: 'Breathable, timeless daily essential with understated logo detail.',
-    price: 34.00,
-    originalPrice: 42.00,
-    category: 'Apparel',
-    rating: 4.9,
-    reviewCount: 520,
-    badge: 'Save 20%',
+    id: 'google-green-dino-plush',
+    name: 'Google Chrome Dino Green Plush Toy',
+    subtitle: 'Ultra-soft official Chrome T-Rex dinosaur plush stuffed mascot with embroidered details',
+    tagline: 'The iconic browser offline buddy, now in a cuddly velvet soft green plush form.',
+    price: 28.00,
+    originalPrice: 35.00,
+    category: 'Accessories',
+    rating: 4.98,
+    reviewCount: 412,
+    badge: 'Limited Edition',
     inStock: true,
+    stockLeft: 19,
     images: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop&q=80'
+      googleGreenDinoPlushImg,
+      'https://images.unsplash.com/photo-1559454403-b8fb88521f11?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&auto=format&fit=crop&q=80'
     ],
     colors: [
-      { name: 'Chalk White', hex: '#F9FAFB' },
-      { name: 'Deep Royal', hex: '#1D4ED8' },
-      { name: 'Sage Green', hex: '#047857' },
-      { name: 'Obsidian', hex: '#111827' }
+      { name: 'Google Green', hex: '#34A853' },
+      { name: 'Emerald Velvet', hex: '#059669' }
     ],
-    sizes: ['S', 'M', 'L', 'XL', '2XL'],
-    description: 'Made from 100% GOTS certified organic combed ring-spun cotton. Cut in a tailored retail fit with durable double-needle stitching.',
+    sizes: ['Desk Companion 25cm (10")', 'Giant Plush 40cm (16")'],
+    description: 'Meet the official Google Chrome Dinosaur Green Plush stuffed toy! Crafted with ultra-soft velvet plush material, hypoallergenic eco-fill, and delicate embroidered smiling eyes. Features a weighted base so Dino sits perfectly on your desk without falling over.',
     features: [
-      '180 GSM mid-weight premium jersey fabric',
-      '100% GOTS & Fair Trade Certified Cotton',
-      'Tagless neck label for frictionless comfort',
-      'Pre-shrunk to retain shape wash after wash'
+      'Super-soft premium green velvet plush fabric',
+      'Embroidered eyes & iconic Chrome T-Rex silhouette',
+      'Weighted bean base for stable upright desk sitting',
+      'Official woven Google Developer mascot tag'
     ],
     specifications: {
-      'Material': '100% Organic Cotton',
-      'Fit': 'True to Size Retail Fit',
-      'Certifications': 'GOTS, Fair Trade, OEKO-TEX Standard 100',
-      'Care': 'Machine wash cold inside out'
+      'Height': '25 cm / 10 inches',
+      'Material': '100% Recycled Poly Plush Fabric',
+      'Safety': 'Hypoallergenic & OEKO-TEX Standard 100 Safe',
+      'Care': 'Surface wipe or gentle wash in mesh laundry bag'
     }
   },
   {
@@ -337,7 +345,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'minimalist-desk-mat',
-    name: 'MerchFlow Vegan Leather Desk Pad',
+    name: 'Google Workspace Vegan Leather Desk Pad',
     subtitle: 'Dual-sided water-resistant desk protector with integrated magnetic cable organizer',
     tagline: 'Sleek, spill-proof foundation that elevates any home or office workspace.',
     price: 44.00,
@@ -348,25 +356,26 @@ export const PRODUCTS: Product[] = [
     badge: 'New',
     inStock: true,
     images: [
+      googleDeskPadImg,
       'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop&q=80'
     ],
     colors: [
-      { name: 'Cognac Tan', hex: '#92400E' },
       { name: 'Slate Grey', hex: '#4B5563' },
+      { name: 'Cognac Tan', hex: '#92400E' },
       { name: 'Midnight Navy', hex: '#1E3A8A' }
     ],
     sizes: ['Medium (80 x 30 cm)', 'Large (90 x 40 cm)'],
-    description: 'Crafted from premium eco-friendly PU leather on one side and natural felt on the reverse. Includes a magnetic cable holder to keep charging cords neat.',
+    description: 'Crafted from premium eco-friendly vegan PU leather on one side and natural wool felt on the reverse. Includes a magnetic cable holder to keep charging cords neat with subtle embossed Google Workspace branding.',
     features: [
-      'Dual-sided texture (Smooth PU leather / Natural felt)',
+      'Dual-sided texture (Smooth vegan PU leather / Natural felt)',
       'Waterproof & easy to clean with a damp cloth',
       'Non-slip grip backing keeps keyboard anchored',
       'Includes magnetic cable clip accessory'
     ],
     specifications: {
       'Dimensions': '900 x 400 x 2.5 mm',
-      'Material': 'Waterproof PU Leather & Recycled Felt',
+      'Material': 'Waterproof Vegan PU Leather & Recycled Felt',
       'Warranty': '2 Year Replacement Guarantee'
     }
   },
@@ -384,12 +393,13 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockLeft: 9,
     images: [
+      googleAiCeramicCupImg,
       'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80'
     ],
     colors: [
-      { name: 'Matte Clay', hex: '#B45309' },
       { name: 'Chalk White', hex: '#F3F4F6' },
+      { name: 'Matte Clay', hex: '#B45309' },
       { name: 'Midnight Black', hex: '#111827' }
     ],
     sizes: ['10 oz (300ml)'],
@@ -419,6 +429,7 @@ export const PRODUCTS: Product[] = [
     badge: 'Best Seller',
     inStock: true,
     images: [
+      pixelPowerBankImg,
       'https://images.unsplash.com/photo-1609592424074-124b42385c34?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=800&auto=format&fit=crop&q=80'
     ],

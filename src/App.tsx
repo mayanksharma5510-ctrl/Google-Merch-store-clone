@@ -10,6 +10,7 @@ import { Toast } from './components/Toast';
 import { WixStudioEditorModal } from './components/WixStudioEditorModal';
 import { WixAIWizardModal } from './components/WixAIWizardModal';
 import { DevicePreviewModal } from './components/DevicePreviewModal';
+import { MobileBottomNav } from './components/MobileBottomNav';
 import { HomePage } from './pages/HomePage';
 import { ShopPage } from './pages/ShopPage';
 import { OurStoryPage } from './pages/OurStoryPage';
@@ -25,7 +26,7 @@ const MainContent: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-[#F4F4F5] dark:bg-[#121212] font-sans text-[#111827] dark:text-[#F4F4F5] antialiased selection:bg-[#2563EB] selection:text-white transition-colors duration-300">
       <Navbar />
 
-      <main className="flex-1">
+      <main className="flex-1 pb-20 md:pb-0">
         {currentPage === 'home' && <HomePage />}
         {currentPage === 'shop' && <ShopPage />}
         {currentPage === 'our-story' && <OurStoryPage />}
@@ -36,6 +37,9 @@ const MainContent: React.FC = () => {
       </main>
 
       <Footer />
+
+      {/* Mobile Floating Bottom Dock */}
+      <MobileBottomNav />
 
       {/* Global Modals & Drawers */}
       <QuickViewModal />

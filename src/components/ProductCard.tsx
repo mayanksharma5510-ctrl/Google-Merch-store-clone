@@ -163,16 +163,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </div>
           </div>
 
-          {/* Mobile Quick Add Button */}
+          {/* Mobile & Desktop Quick Add Button */}
           <button
             onClick={handleQuickAdd}
             disabled={!product.inStock}
-            className={`p-2.5 rounded-full text-xs font-medium transition-all ${
+            className={`min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 rounded-full text-xs font-medium transition-all cursor-pointer active:scale-95 ${
               addedAnimation
-                ? 'bg-emerald-600 text-white'
-                : 'bg-gray-100 dark:bg-[#262626] hover:bg-[#2563EB] dark:hover:bg-[#2563EB] hover:text-white text-[#111827] dark:text-neutral-200'
+                ? 'bg-emerald-600 text-white shadow-xs'
+                : 'bg-gray-100 dark:bg-[#262626] hover:bg-[#2563EB] dark:hover:bg-[#2563EB] hover:text-white text-[#111827] dark:text-neutral-200 shadow-2xs'
             }`}
-            title="Quick Add to Cart"
+            title="Quick Add to Bag"
+            aria-label="Quick Add to Bag"
           >
             {addedAnimation ? <Check className="w-4 h-4" /> : <ShoppingBag className="w-4 h-4" />}
           </button>

@@ -6,6 +6,9 @@ import { PRODUCTS, FEATURED_BUNDLE, SAMPLE_REVIEWS } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
 import bundleMerchPackImg from '../assets/images/bundle_merch_pack_1786790680490.jpg';
 import merchAccessoriesStudioImg from '../assets/images/merch_accessories_studio_1786791040545.jpg';
+import googleDeveloperHoodieImg from '../assets/images/google_developer_hoodie_1786792435016.jpg';
+import merchDrinkwareStudioImg from '../assets/images/merch_drinkware_studio_1786792507825.jpg';
+import cloudBackpackImg from '../assets/images/cloud_backpack_1786792472768.jpg';
 
 export const HomePage: React.FC = () => {
   const { setCurrentPage, setSelectedCategory, navigateToProduct, addToCart, setIsGA4ModalOpen } = useShop();
@@ -293,7 +296,7 @@ export const HomePage: React.FC = () => {
             {
               name: 'Apparel',
               desc: 'Heavyweight organic hoodies, tees, & embroidered caps',
-              image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&auto=format&fit=crop&q=80',
+              image: googleDeveloperHoodieImg,
               category: 'Apparel' as const,
               ctaText: 'Shop Apparel',
             },
@@ -307,14 +310,14 @@ export const HomePage: React.FC = () => {
             {
               name: 'Drinkware',
               desc: 'Smart temperature mugs & insulated flasks',
-              image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80',
+              image: merchDrinkwareStudioImg,
               category: 'Drinkware' as const,
               ctaText: 'Explore Drinkware',
             },
             {
               name: 'Bags',
               desc: 'Modular tech backpacks & weatherproof travel vaults',
-              image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop&q=80',
+              image: cloudBackpackImg,
               category: 'Bags' as const,
               ctaText: 'Browse Bags',
             },
