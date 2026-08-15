@@ -31,12 +31,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       viewport={{ once: true, margin: '-50px' }}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.25 }}
-      className="group relative bg-white dark:bg-gray-900 rounded-[28px] border border-gray-100 dark:border-gray-800 shadow-xs hover:shadow-md hover:border-gray-200 dark:hover:border-gray-700 transition-all duration-300 flex flex-col overflow-hidden"
+      className="group relative bg-white dark:bg-[#181818] rounded-[28px] border border-gray-100 dark:border-neutral-800 shadow-xs hover:shadow-md hover:border-gray-200 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col overflow-hidden"
     >
       {/* Top Image Container */}
       <div 
         onClick={() => navigateToProduct(product)}
-        className="relative aspect-4/3 w-full bg-gray-100 dark:bg-gray-800 overflow-hidden cursor-pointer"
+        className="relative aspect-4/3 w-full bg-gray-100 dark:bg-[#202020] overflow-hidden cursor-pointer"
       >
         <img
           src={product.images[0]}
@@ -63,7 +63,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           className={`absolute top-3 right-3 z-10 p-2 rounded-full transition-all duration-200 ${
             inWishlist
               ? 'bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 shadow-sm scale-105'
-              : 'bg-white/90 dark:bg-gray-800/90 backdrop-blur-md text-[#6B7280] dark:text-gray-300 hover:text-[#111827] dark:hover:text-white shadow-xs'
+              : 'bg-white/90 dark:bg-[#262626]/90 backdrop-blur-md text-[#6B7280] dark:text-neutral-300 hover:text-[#111827] dark:hover:text-white shadow-xs'
           }`}
           aria-label={inWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}
         >
@@ -77,7 +77,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               e.stopPropagation();
               openQuickView(product);
             }}
-            className="flex-1 py-2 px-3 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 backdrop-blur-md text-[#111827] dark:text-white text-xs font-bold rounded-full shadow-sm flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+            className="flex-1 py-2 px-3 bg-white/90 dark:bg-[#262626]/90 hover:bg-white dark:hover:bg-[#303030] backdrop-blur-md text-[#111827] dark:text-white text-xs font-bold rounded-full shadow-sm flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
           >
             <Eye className="w-3.5 h-3.5" />
             <span>Quick View</span>
@@ -114,13 +114,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                   className={`w-3.5 h-3.5 rounded-full border transition-all ${
                     selectedColor === col.name
                       ? 'ring-2 ring-[#2563EB] ring-offset-1 border-gray-400 scale-110'
-                      : 'border-gray-300 dark:border-gray-600 opacity-80 hover:opacity-100'
+                      : 'border-gray-300 dark:border-neutral-600 opacity-80 hover:opacity-100'
                   }`}
                   style={{ backgroundColor: col.hex }}
                   title={col.name}
                 />
               ))}
-              <span className="text-[11px] text-[#6B7280] dark:text-gray-400 font-medium ml-1">
+              <span className="text-[11px] text-[#6B7280] dark:text-neutral-400 font-medium ml-1">
                 {product.colors.length} color{product.colors.length > 1 ? 's' : ''}
               </span>
             </div>
@@ -129,12 +129,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           {/* Title */}
           <h3
             onClick={() => navigateToProduct(product)}
-            className="text-sm sm:text-base font-bold text-[#111827] dark:text-gray-100 group-hover:text-[#2563EB] dark:group-hover:text-blue-400 transition-colors line-clamp-1 cursor-pointer"
+            className="text-sm sm:text-base font-bold text-[#111827] dark:text-neutral-100 group-hover:text-[#2563EB] dark:group-hover:text-blue-400 transition-colors line-clamp-1 cursor-pointer"
           >
             {product.name}
           </h3>
 
-          <p className="text-xs text-[#6B7280] dark:text-gray-400 line-clamp-1 mt-0.5">
+          <p className="text-xs text-[#6B7280] dark:text-neutral-400 line-clamp-1 mt-0.5">
             {product.subtitle}
           </p>
 
@@ -143,20 +143,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <div className="flex items-center text-amber-400">
               <Star className="w-3.5 h-3.5 fill-current" />
             </div>
-            <span className="text-xs font-bold text-[#111827] dark:text-gray-200">{product.rating}</span>
-            <span className="text-xs text-[#6B7280] dark:text-gray-400">({product.reviewCount})</span>
+            <span className="text-xs font-bold text-[#111827] dark:text-neutral-200">{product.rating}</span>
+            <span className="text-xs text-[#6B7280] dark:text-neutral-400">({product.reviewCount})</span>
           </div>
         </div>
 
         {/* Price & Action Footer */}
-        <div className="pt-3 mt-3 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+        <div className="pt-3 mt-3 border-t border-gray-100 dark:border-neutral-800 flex items-center justify-between">
           <div>
             <div className="flex items-baseline gap-1.5">
               <span className="text-base font-extrabold text-[#111827] dark:text-white">
                 ${product.price.toFixed(2)}
               </span>
               {product.originalPrice && (
-                <span className="text-xs text-[#6B7280] dark:text-gray-400 line-through">
+                <span className="text-xs text-[#6B7280] dark:text-neutral-400 line-through">
                   ${product.originalPrice.toFixed(2)}
                 </span>
               )}
@@ -170,7 +170,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             className={`p-2.5 rounded-full text-xs font-medium transition-all ${
               addedAnimation
                 ? 'bg-emerald-600 text-white'
-                : 'bg-gray-100 dark:bg-gray-800 hover:bg-[#2563EB] dark:hover:bg-[#2563EB] hover:text-white text-[#111827] dark:text-gray-200'
+                : 'bg-gray-100 dark:bg-[#262626] hover:bg-[#2563EB] dark:hover:bg-[#2563EB] hover:text-white text-[#111827] dark:text-neutral-200'
             }`}
             title="Quick Add to Cart"
           >

@@ -4,11 +4,23 @@ import { ArrowRight, Check, Star, Flame, ShoppingBag, Sparkles, ShieldCheck, Tru
 import { useShop } from '../context/ShopContext';
 import { PRODUCTS, FEATURED_BUNDLE, SAMPLE_REVIEWS } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
+import bundleMerchPackImg from '../assets/images/bundle_merch_pack_1786790680490.jpg';
+import merchAccessoriesStudioImg from '../assets/images/merch_accessories_studio_1786791040545.jpg';
 
 export const HomePage: React.FC = () => {
   const { setCurrentPage, setSelectedCategory, navigateToProduct, addToCart, setIsGA4ModalOpen } = useShop();
 
-  const bestSellers = PRODUCTS.filter((p) => p.badge === 'Best Seller' || p.badge === 'GA4 Pick').slice(0, 4);
+  const targetBestSellerIds = [
+    'google-pen-red',
+    'google-gray-cotton-cap',
+    'google-ombre-pen-purple',
+    'nano-banana-tee',
+    'chrome-dino-dark-mode-collection',
+  ];
+
+  const bestSellers = targetBestSellerIds
+    .map((id) => PRODUCTS.find((p) => p.id === id))
+    .filter((p): p is typeof PRODUCTS[0] => !!p);
 
   const scrollToBestSellers = () => {
     const el = document.getElementById('best-sellers-section');
@@ -56,7 +68,7 @@ export const HomePage: React.FC = () => {
         {/* Left Hero Main Card */}
         <motion.section
           variants={itemVariants}
-          className="lg:col-span-7 bg-white dark:bg-gray-900 rounded-[32px] p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden shadow-xs border border-gray-200/80 dark:border-gray-800 group"
+          className="lg:col-span-7 bg-white dark:bg-[#181818] rounded-[32px] p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden shadow-xs border border-gray-200/80 dark:border-neutral-800 group"
         >
           <div className="relative z-10 space-y-6">
             <motion.h1
@@ -73,7 +85,7 @@ export const HomePage: React.FC = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-[#6B7280] dark:text-gray-300 text-sm sm:text-base max-w-lg leading-relaxed font-normal"
+              className="text-[#6B7280] dark:text-neutral-300 text-sm sm:text-base max-w-lg leading-relaxed font-normal"
             >
               Elevate your daily workflow with official Google organic apparel, smart temperature drinkware, modular tech bags, and tactile desktop accessories.
             </motion.p>
@@ -100,7 +112,7 @@ export const HomePage: React.FC = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={scrollToBestSellers}
-                className="px-7 py-3.5 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-[#111827] dark:text-white text-xs sm:text-sm font-bold rounded-full hover:bg-white dark:hover:bg-gray-700 hover:border-gray-400 transition-all cursor-pointer flex items-center gap-2"
+                className="px-7 py-3.5 bg-gray-50 dark:bg-[#242424] border border-gray-300 dark:border-neutral-700 text-[#111827] dark:text-white text-xs sm:text-sm font-bold rounded-full hover:bg-white dark:hover:bg-[#2c2c2c] hover:border-gray-400 transition-all cursor-pointer flex items-center gap-2"
               >
                 <Flame className="w-4 h-4 text-amber-500 fill-amber-500 animate-bounce" />
                 <span>Explore Best Sellers</span>
@@ -112,35 +124,21 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="pt-8 mt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left relative z-10"
+            className="pt-8 mt-8 border-t border-gray-100 dark:border-neutral-800 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left relative z-10"
           >
-            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] dark:text-gray-300">
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] dark:text-neutral-300">
               <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
               <span>Free Ship Over $75</span>
             </div>
-            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] dark:text-gray-300">
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] dark:text-neutral-300">
               <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
               <span>30-Day Easy Returns</span>
             </div>
-            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] dark:text-gray-300">
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] dark:text-neutral-300">
               <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
               <span>100% Organic & Ethically Made</span>
             </div>
           </motion.div>
-
-          {/* Animated Background Glow */}
-          <motion.div
-            animate={{
-              scale: [1, 1.15, 1],
-              opacity: [0.5, 0.7, 0.5],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="absolute -right-12 -bottom-12 w-72 h-72 bg-blue-100/80 rounded-full blur-3xl pointer-events-none"
-          />
         </motion.section>
 
         {/* Right Hero Feature Bundle Card */}
@@ -148,62 +146,65 @@ export const HomePage: React.FC = () => {
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ duration: 0.3 }}
-            className="flex-1 bg-gradient-to-br from-gray-900 via-gray-900 to-[#111827] rounded-[32px] p-8 text-white flex flex-col justify-between relative overflow-hidden shadow-md border border-gray-800"
+            className="flex-1 bg-white dark:bg-[#181818] rounded-[32px] p-8 text-[#111827] dark:text-white flex flex-col justify-between relative overflow-hidden shadow-xs dark:shadow-md border border-gray-200/80 dark:border-neutral-800 transition-colors"
           >
             <div className="space-y-4 relative z-10">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-400/20 border border-amber-400/30 text-amber-300 text-[10px] font-extrabold uppercase tracking-wider rounded-full">
-                <Flame className="w-3 h-3 text-amber-400 fill-amber-400" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 border border-amber-500/30 dark:bg-amber-400/10 dark:border-amber-400/20 text-amber-700 dark:text-amber-300 text-[10px] font-extrabold uppercase tracking-wider rounded-full">
+                <Flame className="w-3 h-3 text-amber-600 dark:text-amber-400 fill-amber-600 dark:fill-amber-400" />
                 <span>Weekly Bundle Deal</span>
               </div>
 
               <div>
-                <h3 className="text-2xl font-extrabold tracking-tight text-white">
+                <h3 className="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                   The Developer Starter Pack
                 </h3>
-                <p className="text-xs text-gray-300 mt-1 max-w-xs leading-relaxed">
-                  Heavyweight organic hoodie + Tensor mechanical keyboard + Insulated water flask.
+                <p className="text-xs text-gray-600 dark:text-neutral-300 mt-1 max-w-xs leading-relaxed">
+                  Heavyweight organic hoodie + Insulated water bottle + Cotton cap + Enamel keychain.
                 </p>
               </div>
 
               <div className="flex items-baseline gap-3 pt-1">
-                <span className="text-3xl font-black text-blue-400">
+                <span className="text-3xl font-black text-[#2563EB] dark:text-blue-400">
                   ${FEATURED_BUNDLE.bundlePrice.toFixed(2)}
                 </span>
-                <span className="text-sm text-gray-400 line-through">
+                <span className="text-sm text-gray-400 dark:text-neutral-400 line-through">
                   ${FEATURED_BUNDLE.originalTotalPrice.toFixed(2)}
                 </span>
-                <span className="px-2.5 py-0.5 bg-red-600 text-white font-black text-[10px] uppercase tracking-wider rounded-full shadow-xs animate-pulse">
+                <span className="px-2.5 py-0.5 bg-red-600 text-white font-black text-[10px] uppercase tracking-wider rounded-full shadow-xs">
                   SAVE ${FEATURED_BUNDLE.savings.toFixed(0)} OFF
                 </span>
               </div>
             </div>
 
-            {/* Interactive Bundle Image Preview */}
-            <div className="pt-6 relative z-10 space-y-4">
-              <div className="flex items-center gap-2 overflow-x-auto pb-1">
-                {FEATURED_BUNDLE.items.map((item) => (
-                  <motion.div
-                    key={item.id}
-                    whileHover={{ scale: 1.08 }}
-                    className="w-16 h-16 rounded-xl bg-gray-800/80 border border-gray-700/80 overflow-hidden shrink-0"
-                  >
-                    <img src={item.images[0]} alt={item.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                  </motion.div>
-                ))}
-              </div>
+            {/* Single Bundle Collection Cover Image */}
+            <div className="pt-4 relative z-10 space-y-4 flex-1 flex flex-col justify-end">
+              <motion.div
+                whileHover={{ scale: 1.015 }}
+                className="w-full h-56 sm:h-64 lg:h-60 xl:h-64 rounded-2xl bg-gray-50 dark:bg-[#242424] border border-black/90 dark:border-neutral-600 overflow-hidden relative group shadow-sm"
+              >
+                <img
+                  src={bundleMerchPackImg}
+                  alt="Google Developer Starter Bundle with hoodie, bottle, cap, and keychain"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-70 pointer-events-none" />
+                <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between text-xs font-bold text-white drop-shadow-sm">
+                  <span>4-Piece Premium Set</span>
+                  <span className="bg-black/75 backdrop-blur-xs px-2.5 py-0.5 rounded-md border border-white/20 text-[11px]">All-in-One</span>
+                </div>
+              </motion.div>
 
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => FEATURED_BUNDLE.items.forEach((p) => addToCart(p))}
-                className="w-full py-3.5 bg-[#2563EB] hover:bg-blue-600 text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
+                className="w-full py-3.5 bg-[#2563EB] hover:bg-blue-600 text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
               >
                 <ShoppingBag className="w-4 h-4" />
                 <span>Add Starter Bundle to Bag</span>
               </motion.button>
             </div>
-
-            <div className="absolute -right-8 -bottom-8 w-48 h-48 bg-blue-600 rounded-full blur-3xl opacity-30 pointer-events-none" />
           </motion.div>
         </motion.aside>
       </motion.div>
@@ -251,7 +252,7 @@ export const HomePage: React.FC = () => {
           variants={{
             visible: { transition: { staggerChildren: 0.1 } },
           }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5"
         >
           {bestSellers.map((product) => (
             <motion.div key={product.id} variants={itemVariants}>
@@ -299,7 +300,7 @@ export const HomePage: React.FC = () => {
             {
               name: 'Accessories',
               desc: 'Magnetic power banks, active noise buds, & desk pads',
-              image: 'https://images.unsplash.com/photo-1609592424074-124b42385c34?w=800&auto=format&fit=crop&q=80',
+              image: merchAccessoriesStudioImg,
               category: 'Accessories' as const,
               ctaText: 'Shop Accessories',
             },
@@ -334,8 +335,8 @@ export const HomePage: React.FC = () => {
                 referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
               />
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/95 via-[#111827]/50 to-transparent transition-opacity" />
+              {/* Dark Overlay Solid */}
+              <div className="absolute inset-0 bg-black/60 transition-opacity" />
 
               {/* Card Content & Actionable CTA Button */}
               <div className="relative z-10 space-y-3">
@@ -343,7 +344,7 @@ export const HomePage: React.FC = () => {
                   <h3 className="text-xl font-extrabold text-white group-hover:text-blue-300 transition-colors">
                     {cat.name}
                   </h3>
-                  <p className="text-xs text-gray-300 mt-1 leading-relaxed">
+                  <p className="text-xs text-neutral-300 mt-1 leading-relaxed">
                     {cat.desc}
                   </p>
                 </div>
@@ -355,7 +356,7 @@ export const HomePage: React.FC = () => {
                     setSelectedCategory(cat.category);
                     setCurrentPage('shop');
                   }}
-                  className="w-full py-2.5 px-4 bg-white/90 hover:bg-white text-[#111827] hover:text-[#2563EB] font-extrabold text-xs rounded-xl transition-all cursor-pointer flex items-center justify-between shadow-sm"
+                  className="w-full py-2.5 px-4 bg-white hover:bg-neutral-100 text-[#111827] hover:text-[#2563EB] font-extrabold text-xs rounded-xl transition-all cursor-pointer flex items-center justify-between shadow-sm"
                 >
                   <span>{cat.ctaText}</span>
                   <ArrowRight className="w-4 h-4 text-[#2563EB]" />
@@ -392,7 +393,7 @@ export const HomePage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               whileHover={{ y: -4 }}
-              className="p-6 bg-white dark:bg-gray-900 rounded-[28px] border border-gray-200/80 dark:border-gray-800 shadow-xs space-y-4 flex flex-col justify-between"
+              className="p-6 bg-white dark:bg-[#181818] rounded-[28px] border border-gray-200/80 dark:border-neutral-800 shadow-xs space-y-4 flex flex-col justify-between"
             >
               <div className="space-y-2">
                 <div className="flex items-center gap-1 text-amber-400">
@@ -401,10 +402,10 @@ export const HomePage: React.FC = () => {
                   ))}
                 </div>
                 <h4 className="text-sm font-bold text-[#111827] dark:text-white">{rev.title}</h4>
-                <p className="text-xs text-[#6B7280] dark:text-gray-300 leading-relaxed">{rev.comment}</p>
+                <p className="text-xs text-[#6B7280] dark:text-neutral-300 leading-relaxed">{rev.comment}</p>
               </div>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-gray-800">
+              <div className="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-neutral-800">
                 <img
                   src={rev.userAvatar}
                   alt={rev.userName}
@@ -416,7 +417,7 @@ export const HomePage: React.FC = () => {
                     <span className="text-xs font-bold text-[#111827] dark:text-white">{rev.userName}</span>
                     <HeartHandshake className="w-3.5 h-3.5 text-[#2563EB] dark:text-blue-400" />
                   </div>
-                  <span className="text-[10px] text-[#6B7280] dark:text-gray-400">Verified Buyer • {rev.date}</span>
+                  <span className="text-[10px] text-[#6B7280] dark:text-neutral-400">Verified Buyer • {rev.date}</span>
                 </div>
               </div>
             </motion.div>

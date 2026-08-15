@@ -22,7 +22,7 @@ const MainContent: React.FC = () => {
   const { currentPage } = useShop();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F3F4F6] dark:bg-[#0B0F17] font-sans text-[#111827] dark:text-[#F3F4F6] antialiased selection:bg-[#2563EB] selection:text-white transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-[#F4F4F5] dark:bg-[#121212] font-sans text-[#111827] dark:text-[#F4F4F5] antialiased selection:bg-[#2563EB] selection:text-white transition-colors duration-300">
       <Navbar />
 
       <main className="flex-1">

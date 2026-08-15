@@ -80,7 +80,7 @@ export const CheckoutPage: React.FC = () => {
     return (
       <div className="max-w-2xl mx-auto px-4 py-16 text-center space-y-4">
         <h2 className="text-xl font-extrabold text-[#111827] dark:text-white">Your bag is empty</h2>
-        <p className="text-xs text-[#6B7280] dark:text-gray-400">Add items to cart before proceeding to checkout.</p>
+        <p className="text-xs text-gray-500 dark:text-neutral-400">Add items to cart before proceeding to checkout.</p>
         <button
           onClick={() => setCurrentPage('shop')}
           className="py-3 px-8 bg-[#2563EB] text-white font-bold text-xs rounded-full shadow-xs cursor-pointer"
@@ -94,10 +94,10 @@ export const CheckoutPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 pb-4">
+      <div className="flex items-center justify-between border-b border-gray-200 dark:border-neutral-800 pb-4">
         <button
           onClick={() => setCurrentPage('cart')}
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#6B7280] dark:text-gray-400 hover:text-[#111827] dark:hover:text-white cursor-pointer"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-500 dark:text-neutral-400 hover:text-gray-900 dark:hover:text-white cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Bag</span>
@@ -113,13 +113,13 @@ export const CheckoutPage: React.FC = () => {
         {/* Left Checkout Form Column */}
         <form onSubmit={handlePlaceOrder} className="lg:col-span-7 space-y-6">
           {/* Quick Demo Auto-Fill Banner */}
-          <div className="p-5 bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/50 rounded-[24px] flex items-center justify-between">
+          <div className="p-5 bg-blue-50/70 dark:bg-[#1f1f1f] border border-blue-100 dark:border-neutral-800 rounded-[24px] flex items-center justify-between">
             <div>
               <h3 className="text-xs font-bold text-[#111827] dark:text-white flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-[#2563EB] dark:text-blue-400" />
                 <span>Evaluation Quick Mode</span>
               </h3>
-              <p className="text-[11px] text-[#6B7280] dark:text-gray-400 mt-0.5">
+              <p className="text-[11px] text-gray-500 dark:text-neutral-400 mt-0.5">
                 Click auto-fill to instantly populate sample Google employee address and testing payment.
               </p>
             </div>
@@ -133,92 +133,92 @@ export const CheckoutPage: React.FC = () => {
           </div>
 
           {/* Shipping Address Form */}
-          <div className="p-6 bg-white dark:bg-gray-900 rounded-[32px] border border-gray-100 dark:border-gray-800 shadow-xs space-y-4">
-            <h3 className="text-xs font-extrabold text-[#111827] dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-gray-800 pb-3">
+          <div className="p-6 bg-white dark:bg-[#181818] rounded-[32px] border border-gray-100 dark:border-neutral-800 shadow-xs space-y-4">
+            <h3 className="text-xs font-extrabold text-[#111827] dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-neutral-800 pb-3">
               1. Shipping Address
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div className="space-y-1 sm:col-span-2">
-                <label className="font-bold text-[#111827] dark:text-gray-200">Full Name *</label>
+                <label className="font-bold text-[#111827] dark:text-neutral-200">Full Name *</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. Alex Chen"
                   value={address.fullName}
                   onChange={(e) => setAddress({ ...address, fullName: e.target.value })}
-                  className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
+                  className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-[#222222] border border-gray-200 dark:border-neutral-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="font-bold text-[#111827] dark:text-gray-200">Email Address *</label>
+                <label className="font-bold text-[#111827] dark:text-neutral-200">Email Address *</label>
                 <input
                   type="email"
                   required
                   placeholder="alex@company.com"
                   value={address.email}
                   onChange={(e) => setAddress({ ...address, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
+                  className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-[#222222] border border-gray-200 dark:border-neutral-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="font-bold text-[#111827] dark:text-gray-200">Phone Number</label>
+                <label className="font-bold text-[#111827] dark:text-neutral-200">Phone Number</label>
                 <input
                   type="tel"
                   placeholder="+1 (555) 000-0000"
                   value={address.phone}
                   onChange={(e) => setAddress({ ...address, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
+                  className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-[#222222] border border-gray-200 dark:border-neutral-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
                 />
               </div>
 
               <div className="space-y-1 sm:col-span-2">
-                <label className="font-bold text-[#111827] dark:text-gray-200">Street Address *</label>
+                <label className="font-bold text-[#111827] dark:text-neutral-200">Street Address *</label>
                 <input
                   type="text"
                   required
                   placeholder="1600 Amphitheatre Pkwy"
                   value={address.addressLine1}
                   onChange={(e) => setAddress({ ...address, addressLine1: e.target.value })}
-                  className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
+                  className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-[#222222] border border-gray-200 dark:border-neutral-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="font-bold text-[#111827] dark:text-gray-200">City *</label>
+                <label className="font-bold text-[#111827] dark:text-neutral-200">City *</label>
                 <input
                   type="text"
                   required
                   placeholder="Mountain View"
                   value={address.city}
                   onChange={(e) => setAddress({ ...address, city: e.target.value })}
-                  className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
+                  className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-[#222222] border border-gray-200 dark:border-neutral-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-1">
-                  <label className="font-bold text-[#111827] dark:text-gray-200">State *</label>
+                  <label className="font-bold text-[#111827] dark:text-neutral-200">State *</label>
                   <input
                     type="text"
                     required
                     placeholder="CA"
                     value={address.state}
                     onChange={(e) => setAddress({ ...address, state: e.target.value })}
-                    className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
+                    className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-[#222222] border border-gray-200 dark:border-neutral-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="font-bold text-[#111827] dark:text-gray-200">Postal Code *</label>
+                  <label className="font-bold text-[#111827] dark:text-neutral-200">Postal Code *</label>
                   <input
                     type="text"
                     required
                     placeholder="94043"
                     value={address.postalCode}
                     onChange={(e) => setAddress({ ...address, postalCode: e.target.value })}
-                    className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
+                    className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-[#222222] border border-gray-200 dark:border-neutral-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
                   />
                 </div>
               </div>
@@ -226,8 +226,8 @@ export const CheckoutPage: React.FC = () => {
           </div>
 
           {/* Shipping Method */}
-          <div className="p-6 bg-white dark:bg-gray-900 rounded-[32px] border border-gray-100 dark:border-gray-800 shadow-xs space-y-3">
-            <h3 className="text-xs font-extrabold text-[#111827] dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-gray-800 pb-3">
+          <div className="p-6 bg-white dark:bg-[#181818] rounded-[32px] border border-gray-100 dark:border-neutral-800 shadow-xs space-y-3">
+            <h3 className="text-xs font-extrabold text-[#111827] dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-neutral-800 pb-3">
               2. Delivery Method
             </h3>
 
@@ -236,15 +236,15 @@ export const CheckoutPage: React.FC = () => {
                 onClick={() => setShippingMethod('express')}
                 className={`p-4 rounded-2xl border flex items-center justify-between cursor-pointer transition-all ${
                   shippingMethod === 'express'
-                    ? 'border-[#2563EB] bg-blue-50/50 dark:bg-blue-950/60 text-[#111827] dark:text-white font-bold ring-2 ring-blue-100 dark:ring-blue-900'
-                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                    ? 'border-[#2563EB] bg-blue-50/50 dark:bg-[#202020] text-[#111827] dark:text-white font-bold ring-2 ring-blue-500/20'
+                    : 'border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <Truck className="w-5 h-5 text-[#2563EB] dark:text-blue-400" />
                   <div>
                     <span className="font-bold block text-[#111827] dark:text-white">Express 2-Day Delivery</span>
-                    <span className="text-[11px] text-[#6B7280] dark:text-gray-400">Delivered in 2 business days</span>
+                    <span className="text-[11px] text-gray-500 dark:text-neutral-400">Delivered in 2 business days</span>
                   </div>
                 </div>
                 <span className="font-extrabold text-[#2563EB] dark:text-blue-400">FREE</span>
@@ -254,15 +254,15 @@ export const CheckoutPage: React.FC = () => {
                 onClick={() => setShippingMethod('overnight')}
                 className={`p-4 rounded-2xl border flex items-center justify-between cursor-pointer transition-all ${
                   shippingMethod === 'overnight'
-                    ? 'border-[#2563EB] bg-blue-50/50 dark:bg-blue-950/60 text-[#111827] dark:text-white font-bold ring-2 ring-blue-100 dark:ring-blue-900'
-                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                    ? 'border-[#2563EB] bg-blue-50/50 dark:bg-[#202020] text-[#111827] dark:text-white font-bold ring-2 ring-blue-500/20'
+                    : 'border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <Sparkles className="w-5 h-5 text-amber-500" />
                   <div>
                     <span className="font-bold block text-[#111827] dark:text-white">Overnight Priority Express</span>
-                    <span className="text-[11px] text-[#6B7280] dark:text-gray-400">Delivered tomorrow before 10:30 AM</span>
+                    <span className="text-[11px] text-gray-500 dark:text-neutral-400">Delivered tomorrow before 10:30 AM</span>
                   </div>
                 </div>
                 <span className="font-extrabold text-[#111827] dark:text-white">$14.99</span>
@@ -271,8 +271,8 @@ export const CheckoutPage: React.FC = () => {
           </div>
 
           {/* Payment Method */}
-          <div className="p-6 bg-white dark:bg-gray-900 rounded-[32px] border border-gray-100 dark:border-gray-800 shadow-xs space-y-4">
-            <h3 className="text-xs font-extrabold text-[#111827] dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-gray-800 pb-3">
+          <div className="p-6 bg-white dark:bg-[#181818] rounded-[32px] border border-gray-100 dark:border-neutral-800 shadow-xs space-y-4">
+            <h3 className="text-xs font-extrabold text-[#111827] dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-neutral-800 pb-3">
               3. Payment Method
             </h3>
 
@@ -290,7 +290,7 @@ export const CheckoutPage: React.FC = () => {
                   className={`p-3.5 rounded-2xl border font-bold text-center transition-all cursor-pointer ${
                     paymentMethod === m.id
                       ? 'border-[#2563EB] bg-[#2563EB] text-white shadow-xs'
-                      : 'border-gray-200 dark:border-gray-700 text-[#111827] dark:text-gray-200 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-800'
+                      : 'border-gray-200 dark:border-neutral-700 text-[#111827] dark:text-neutral-200 hover:border-gray-300 dark:hover:border-neutral-600 bg-white dark:bg-[#222222]'
                   }`}
                 >
                   <span className="block text-sm mb-0.5">{m.icon}</span>
@@ -300,36 +300,36 @@ export const CheckoutPage: React.FC = () => {
             </div>
 
             {paymentMethod === 'card' && (
-              <div className="space-y-3 pt-2 text-xs border-t border-gray-100 dark:border-gray-800">
+              <div className="space-y-3 pt-2 text-xs border-t border-gray-100 dark:border-neutral-800">
                 <div className="space-y-1">
-                  <label className="font-bold text-[#111827] dark:text-gray-200">Card Number</label>
+                  <label className="font-bold text-[#111827] dark:text-neutral-200">Card Number</label>
                   <input
                     type="text"
                     placeholder="4242 4242 4242 4242"
                     value={cardNumber}
                     onChange={(e) => setCardNumber(e.target.value)}
-                    className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
+                    className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-[#222222] border border-gray-200 dark:border-neutral-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
-                    <label className="font-bold text-[#111827] dark:text-gray-200">Expiry</label>
+                    <label className="font-bold text-[#111827] dark:text-neutral-200">Expiry</label>
                     <input
                       type="text"
                       placeholder="MM/YY"
                       value={cardExp}
                       onChange={(e) => setCardExp(e.target.value)}
-                      className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
+                      className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-[#222222] border border-gray-200 dark:border-neutral-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="font-bold text-[#111827] dark:text-gray-200">CVC</label>
+                    <label className="font-bold text-[#111827] dark:text-neutral-200">CVC</label>
                     <input
                       type="text"
                       placeholder="123"
                       value={cardCvc}
                       onChange={(e) => setCardCvc(e.target.value)}
-                      className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
+                      className="w-full px-4 py-3 rounded-full bg-gray-50 dark:bg-[#222222] border border-gray-200 dark:border-neutral-700 focus:outline-none focus:border-[#2563EB] font-semibold text-[#111827] dark:text-white placeholder:text-gray-400"
                     />
                   </div>
                 </div>
@@ -359,8 +359,8 @@ export const CheckoutPage: React.FC = () => {
 
         {/* Right Order Summary Sidebar */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="p-6 bg-white dark:bg-gray-900 rounded-[32px] border border-gray-100 dark:border-gray-800 shadow-xs space-y-4 sticky top-24">
-            <h3 className="text-xs font-extrabold text-[#111827] dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-gray-800 pb-3">
+          <div className="p-6 bg-white dark:bg-[#181818] rounded-[32px] border border-gray-100 dark:border-neutral-800 shadow-xs space-y-4 sticky top-24">
+            <h3 className="text-xs font-extrabold text-[#111827] dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-neutral-800 pb-3">
               Order Items ({cart.length})
             </h3>
 
@@ -371,11 +371,11 @@ export const CheckoutPage: React.FC = () => {
                     src={item.product.images[0]}
                     alt=""
                     referrerPolicy="no-referrer"
-                    className="w-12 h-12 rounded-xl object-cover bg-gray-100 dark:bg-gray-800 shrink-0"
+                    className="w-12 h-12 rounded-xl object-cover bg-gray-100 dark:bg-[#242424] shrink-0"
                   />
                   <div className="flex-1 min-w-0 text-xs">
                     <h4 className="font-bold text-[#111827] dark:text-white truncate">{item.product.name}</h4>
-                    <p className="text-[11px] text-[#6B7280] dark:text-gray-400">
+                    <p className="text-[11px] text-gray-500 dark:text-neutral-400">
                       Qty: {item.quantity} • {item.selectedColor}
                     </p>
                   </div>
@@ -386,7 +386,7 @@ export const CheckoutPage: React.FC = () => {
               ))}
             </div>
 
-            <div className="space-y-2 text-xs text-[#6B7280] dark:text-gray-400 pt-3 border-t border-gray-100 dark:border-gray-800">
+            <div className="space-y-2 text-xs text-gray-500 dark:text-neutral-400 pt-3 border-t border-gray-100 dark:border-neutral-800">
               <div className="flex justify-between">
                 <span>Subtotal</span>
                 <span className="font-bold text-[#111827] dark:text-white">${cartSubtotal.toFixed(2)}</span>
@@ -405,13 +405,13 @@ export const CheckoutPage: React.FC = () => {
                 <span>Estimated Tax</span>
                 <span className="font-bold text-[#111827] dark:text-white">${estimatedTax.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between text-base font-extrabold text-[#111827] dark:text-white pt-3 border-t border-gray-100 dark:border-gray-800">
+              <div className="flex justify-between text-base font-extrabold text-[#111827] dark:text-white pt-3 border-t border-gray-100 dark:border-neutral-800">
                 <span>Total Due</span>
                 <span className="text-[#2563EB] dark:text-blue-400">${cartTotal.toFixed(2)}</span>
               </div>
             </div>
 
-            <div className="p-3.5 bg-gray-50 dark:bg-gray-800 rounded-2xl space-y-1 text-[11px] text-[#6B7280] dark:text-gray-400">
+            <div className="p-3.5 bg-gray-50 dark:bg-[#202020] rounded-2xl space-y-1 text-[11px] text-gray-500 dark:text-neutral-400">
               <div className="flex items-center gap-1.5 font-bold text-[#111827] dark:text-white">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Google Verified Store Protection</span>
@@ -429,15 +429,15 @@ export const CheckoutPage: React.FC = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="fixed inset-0 bg-gray-900/70 backdrop-blur-xs"
+              className="fixed inset-0 bg-black/75 backdrop-blur-xs"
             />
 
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              className="relative w-full max-w-lg bg-white dark:bg-gray-900 rounded-[32px] shadow-2xl p-6 sm:p-8 space-y-6 z-10 text-center my-8 border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-gray-100"
+              className="relative w-full max-w-lg bg-white dark:bg-[#181818] rounded-[32px] shadow-2xl p-6 sm:p-8 space-y-6 z-10 text-center my-8 border border-gray-100 dark:border-neutral-800 text-gray-900 dark:text-gray-100"
             >
-              <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto shadow-xs">
+              <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto shadow-xs">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
 
@@ -448,23 +448,23 @@ export const CheckoutPage: React.FC = () => {
                 <h2 className="text-2xl font-extrabold text-[#111827] dark:text-white mt-1">
                   Thank You, {confirmedOrder.shippingAddress.fullName}!
                 </h2>
-                <p className="text-xs text-[#6B7280] dark:text-gray-400 mt-1">
+                <p className="text-xs text-gray-500 dark:text-neutral-400 mt-1">
                   Confirmation receipt sent to <strong className="text-[#111827] dark:text-white">{confirmedOrder.shippingAddress.email}</strong>
                 </p>
               </div>
 
               {/* Receipt Details Box */}
-              <div className="p-5 bg-gray-50 dark:bg-gray-800 rounded-[24px] border border-gray-100 dark:border-gray-700 text-left space-y-2 text-xs">
-                <div className="flex justify-between border-b border-gray-200 dark:border-gray-700 pb-2">
-                  <span className="text-[#6B7280] dark:text-gray-400">Order Reference:</span>
+              <div className="p-5 bg-gray-50 dark:bg-[#202020] rounded-[24px] border border-gray-100 dark:border-neutral-700 text-left space-y-2 text-xs">
+                <div className="flex justify-between border-b border-gray-200 dark:border-neutral-700 pb-2">
+                  <span className="text-gray-500 dark:text-neutral-400">Order Reference:</span>
                   <strong className="text-[#111827] dark:text-white">{confirmedOrder.id}</strong>
                 </div>
-                <div className="flex justify-between border-b border-gray-200 dark:border-gray-700 pb-2">
-                  <span className="text-[#6B7280] dark:text-gray-400">Tracking Number:</span>
+                <div className="flex justify-between border-b border-gray-200 dark:border-neutral-700 pb-2">
+                  <span className="text-gray-500 dark:text-neutral-400">Tracking Number:</span>
                   <strong className="text-[#2563EB] dark:text-blue-400">{confirmedOrder.trackingNumber}</strong>
                 </div>
-                <div className="flex justify-between border-b border-gray-200 dark:border-gray-700 pb-2">
-                  <span className="text-[#6B7280] dark:text-gray-400">Est. Delivery:</span>
+                <div className="flex justify-between border-b border-gray-200 dark:border-neutral-700 pb-2">
+                  <span className="text-gray-500 dark:text-neutral-400">Est. Delivery:</span>
                   <strong className="text-emerald-700 dark:text-emerald-400">{confirmedOrder.estimatedDelivery}</strong>
                 </div>
                 <div className="flex justify-between pt-1">
@@ -485,7 +485,7 @@ export const CheckoutPage: React.FC = () => {
                 </button>
                 <button
                   onClick={() => window.print()}
-                  className="py-3.5 px-6 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-[#111827] dark:text-white font-bold text-xs rounded-full flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="py-3.5 px-6 bg-gray-100 dark:bg-[#282828] hover:bg-gray-200 dark:hover:bg-[#343434] text-[#111827] dark:text-white font-bold text-xs rounded-full flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <Printer className="w-4 h-4" />
                   <span>Print Receipt</span>

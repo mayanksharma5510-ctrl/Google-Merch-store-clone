@@ -69,17 +69,17 @@ export const CartDrawer: React.FC = () => {
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-          className="relative w-full max-w-md bg-white dark:bg-gray-900 h-full shadow-2xl flex flex-col justify-between z-10 overflow-hidden text-gray-900 dark:text-gray-100"
+          className="relative w-full max-w-md bg-white dark:bg-[#181818] h-full shadow-2xl flex flex-col justify-between z-10 overflow-hidden text-gray-900 dark:text-neutral-100"
         >
           {/* Header */}
-          <div className="p-5 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between bg-white dark:bg-gray-900 sticky top-0 z-10">
+          <div className="p-5 border-b border-gray-100 dark:border-neutral-800 flex items-center justify-between bg-white dark:bg-[#181818] sticky top-0 z-10">
             <div className="flex items-center gap-2.5">
-              <div className="p-2 bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 rounded-xl">
+              <div className="p-2 bg-blue-50 dark:bg-[#242424] text-blue-600 dark:text-blue-400 rounded-xl">
                 <ShoppingBag className="w-5 h-5" />
               </div>
               <div>
                 <h2 className="text-base font-bold text-gray-900 dark:text-white">Your Cart</h2>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
+                <p className="text-xs text-gray-500 dark:text-neutral-400">
                   {cart.length} item{cart.length === 1 ? '' : 's'} selected
                 </p>
               </div>
@@ -87,7 +87,7 @@ export const CartDrawer: React.FC = () => {
 
             <button
               onClick={() => setIsCartDrawerOpen(false)}
-              className="p-2 text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+              className="p-2 text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-[#262626] rounded-full transition-colors cursor-pointer"
               aria-label="Close cart"
             >
               <X className="w-5 h-5" />
@@ -95,8 +95,8 @@ export const CartDrawer: React.FC = () => {
           </div>
 
           {/* Free Shipping Progress Meter */}
-          <div className="px-5 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/40 dark:to-indigo-950/40 border-b border-blue-100 dark:border-blue-900/50">
-            <div className="flex items-center justify-between text-xs font-semibold text-gray-900 dark:text-gray-100 mb-1.5">
+          <div className="px-5 py-3 bg-blue-50/60 dark:bg-[#202020] border-b border-blue-100/60 dark:border-neutral-800">
+            <div className="flex items-center justify-between text-xs font-semibold text-gray-900 dark:text-neutral-100 mb-1.5">
               <span className="flex items-center gap-1.5 text-blue-900 dark:text-blue-300">
                 <Truck className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 {amountNeededForFreeShipping === 0 ? (
@@ -109,10 +109,10 @@ export const CartDrawer: React.FC = () => {
                   </span>
                 )}
               </span>
-              <span className="text-blue-700 dark:text-blue-400">{Math.round(freeShippingPercentage)}%</span>
+              <span className="text-blue-700 dark:text-blue-400 font-bold">{Math.round(freeShippingPercentage)}%</span>
             </div>
 
-            <div className="w-full h-2 bg-blue-100/80 dark:bg-blue-900/40 rounded-full overflow-hidden">
+            <div className="w-full h-2 bg-blue-100/80 dark:bg-[#2a2a2a] rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${freeShippingPercentage}%` }}
@@ -128,11 +128,11 @@ export const CartDrawer: React.FC = () => {
           <div className="flex-1 overflow-y-auto p-5 space-y-4">
             {cart.length === 0 ? (
               <div className="h-full flex flex-col items-center justify-center text-center p-6">
-                <div className="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-gray-800 text-gray-400 flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-[#242424] text-gray-400 flex items-center justify-center mb-4">
                   <ShoppingBag className="w-8 h-8" />
                 </div>
                 <h3 className="text-base font-bold text-gray-900 dark:text-white">Your cart is empty</h3>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 max-w-xs">
+                <p className="text-xs text-gray-500 dark:text-neutral-400 mt-1 max-w-xs">
                   Discover modern tech apparel, smart desk gear, and exclusive developer merchandise.
                 </p>
                 <button
@@ -149,14 +149,14 @@ export const CartDrawer: React.FC = () => {
               cart.map((item) => (
                 <div
                   key={item.id}
-                  className="flex gap-3.5 p-3 bg-gray-50/80 dark:bg-gray-800/60 rounded-2xl border border-gray-100/80 dark:border-gray-700/60 group hover:bg-white dark:hover:bg-gray-800 hover:shadow-xs transition-all"
+                  className="flex gap-3.5 p-3 bg-gray-50/80 dark:bg-[#202020] rounded-2xl border border-gray-100/80 dark:border-neutral-800 group hover:bg-white dark:hover:bg-[#262626] hover:shadow-xs transition-all"
                 >
                   {/* Thumbnail */}
                   <img
                     src={item.product.images[0]}
                     alt={item.product.name}
                     referrerPolicy="no-referrer"
-                    className="w-18 h-18 rounded-xl object-cover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shrink-0"
+                    className="w-18 h-18 rounded-xl object-cover bg-white dark:bg-[#181818] border border-gray-200 dark:border-neutral-700 shrink-0"
                   />
 
                   {/* Info */}
@@ -175,17 +175,17 @@ export const CartDrawer: React.FC = () => {
                         </button>
                       </div>
 
-                      <p className="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">
+                      <p className="text-[11px] text-gray-500 dark:text-neutral-400 mt-0.5">
                         {item.selectedColor} • {item.selectedSize}
                       </p>
                     </div>
 
                     {/* Quantity & Price */}
                     <div className="flex items-center justify-between mt-2">
-                      <div className="inline-flex items-center rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-0.5">
+                      <div className="inline-flex items-center rounded-lg border border-gray-200 dark:border-neutral-700 bg-white dark:bg-[#181818] p-0.5">
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                          className="w-6 h-6 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center font-bold text-xs cursor-pointer"
+                          className="w-6 h-6 rounded-md text-gray-600 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-[#262626] flex items-center justify-center font-bold text-xs cursor-pointer"
                         >
                           -
                         </button>
@@ -194,7 +194,7 @@ export const CartDrawer: React.FC = () => {
                         </span>
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                          className="w-6 h-6 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center font-bold text-xs cursor-pointer"
+                          className="w-6 h-6 rounded-md text-gray-600 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-[#262626] flex items-center justify-center font-bold text-xs cursor-pointer"
                         >
                           +
                         </button>
@@ -212,10 +212,10 @@ export const CartDrawer: React.FC = () => {
 
           {/* Footer & Checkout Action */}
           {cart.length > 0 && (
-            <div className="p-5 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 space-y-3.5">
+            <div className="p-5 border-t border-gray-100 dark:border-neutral-800 bg-white dark:bg-[#181818] space-y-3.5">
               {/* Promo Code Input */}
               {appliedPromo ? (
-                <div className="flex items-center justify-between px-3 py-2 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 rounded-xl text-xs">
+                <div className="flex items-center justify-between px-3 py-2 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/80 rounded-xl text-xs">
                   <div className="flex items-center gap-1.5 text-emerald-800 dark:text-emerald-300 font-medium">
                     <Tag className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                     <span>Promo "<strong>{appliedPromo.code}</strong>" applied</span>
@@ -235,11 +235,11 @@ export const CartDrawer: React.FC = () => {
                       placeholder="Promo Code (e.g. GOOGLE20)"
                       value={promoInput}
                       onChange={(e) => setPromoInput(e.target.value)}
-                      className="flex-1 px-3 py-2 text-xs rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 uppercase"
+                      className="flex-1 px-3 py-2 text-xs rounded-xl border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-[#222222] text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 uppercase"
                     />
                     <button
                       type="submit"
-                      className="px-3 py-2 bg-gray-900 dark:bg-blue-600 hover:bg-black dark:hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors shrink-0 cursor-pointer"
+                      className="px-3 py-2 bg-gray-900 dark:bg-[#2563EB] hover:bg-black dark:hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors shrink-0 cursor-pointer"
                     >
                       Apply
                     </button>
@@ -252,7 +252,7 @@ export const CartDrawer: React.FC = () => {
 
               {/* Subtotal breakdown */}
               <div className="space-y-1.5 text-xs">
-                <div className="flex justify-between text-gray-600 dark:text-gray-400">
+                <div className="flex justify-between text-gray-600 dark:text-neutral-400">
                   <span>Subtotal</span>
                   <span className="font-semibold text-gray-900 dark:text-white">${cartSubtotal.toFixed(2)}</span>
                 </div>
@@ -262,13 +262,13 @@ export const CartDrawer: React.FC = () => {
                     <span>-${discountAmount.toFixed(2)}</span>
                   </div>
                 )}
-                <div className="flex justify-between text-gray-600 dark:text-gray-400">
+                <div className="flex justify-between text-gray-600 dark:text-neutral-400">
                   <span>Shipping</span>
                   <span className="font-semibold text-gray-900 dark:text-white">
                     {amountNeededForFreeShipping === 0 ? 'FREE' : '$5.99'}
                   </span>
                 </div>
-                <div className="flex justify-between text-sm font-bold text-gray-900 dark:text-white pt-2 border-t border-gray-100 dark:border-gray-800">
+                <div className="flex justify-between text-sm font-bold text-gray-900 dark:text-white pt-2 border-t border-gray-100 dark:border-neutral-800">
                   <span>Estimated Total</span>
                   <span className="text-blue-600 dark:text-blue-400">${cartTotal.toFixed(2)}</span>
                 </div>
@@ -287,13 +287,13 @@ export const CartDrawer: React.FC = () => {
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     onClick={handleViewCartClick}
-                    className="py-2.5 px-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-semibold rounded-xl text-center transition-colors cursor-pointer"
+                    className="py-2.5 px-3 bg-gray-100 dark:bg-[#242424] hover:bg-gray-200 dark:hover:bg-[#2e2e2e] text-gray-800 dark:text-neutral-200 text-xs font-semibold rounded-xl text-center transition-colors cursor-pointer"
                   >
                     View Full Cart
                   </button>
                   <button
                     onClick={() => setIsCartDrawerOpen(false)}
-                    className="py-2.5 px-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-xl text-center transition-colors cursor-pointer"
+                    className="py-2.5 px-3 bg-white dark:bg-[#181818] border border-gray-200 dark:border-neutral-700 hover:bg-gray-50 dark:hover:bg-[#242424] text-gray-700 dark:text-neutral-300 text-xs font-semibold rounded-xl text-center transition-colors cursor-pointer"
                   >
                     Keep Shopping
                   </button>

@@ -86,8 +86,8 @@ export const Navbar: React.FC = () => {
       <div
         className={`max-w-7xl mx-auto backdrop-blur-md border rounded-2xl sm:rounded-full px-4 sm:px-6 lg:px-8 pointer-events-auto transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/85 dark:bg-[#111827]/85 shadow-md border-gray-300/80 dark:border-gray-800 scale-[0.99] py-0.5'
-            : 'bg-white/70 dark:bg-[#111827]/70 shadow-xs border-gray-200/80 dark:border-gray-800'
+            ? 'bg-white/90 dark:bg-[#181818]/90 shadow-md border-gray-300/80 dark:border-neutral-800 scale-[0.99] py-0.5'
+            : 'bg-white/80 dark:bg-[#181818]/80 shadow-xs border-gray-200/80 dark:border-neutral-800'
         }`}
       >
         <div className="flex items-center justify-between h-16 sm:h-20 gap-4">
@@ -97,7 +97,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setCurrentPage('home')}
               className="flex items-center gap-2.5 text-left group cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 border border-gray-200/80 dark:border-gray-700 p-2 flex items-center justify-center shadow-xs group-hover:scale-105 group-hover:border-blue-300 transition-all">
+              <div className="w-10 h-10 rounded-full bg-white dark:bg-[#242424] border border-gray-200/80 dark:border-neutral-700 p-2 flex items-center justify-center shadow-xs group-hover:scale-105 group-hover:border-blue-300 transition-all">
                 <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
                   <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
@@ -113,13 +113,13 @@ export const Navbar: React.FC = () => {
             </button>
 
             {/* Desktop Nav Links */}
-            <nav className="hidden lg:flex items-center gap-1 sm:gap-2 text-xs font-bold text-[#6B7280] dark:text-gray-300">
+            <nav className="hidden lg:flex items-center gap-1 sm:gap-2 text-xs font-bold text-[#6B7280] dark:text-neutral-300">
               <button
                 onClick={() => setCurrentPage('home')}
                 className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
                   currentPage === 'home'
                     ? 'bg-[#111827] dark:bg-white text-white dark:text-[#111827] shadow-2xs font-extrabold'
-                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-gray-800/80'
+                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-[#262626]'
                 }`}
               >
                 Home
@@ -133,7 +133,7 @@ export const Navbar: React.FC = () => {
                 className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
                   currentPage === 'shop'
                     ? 'bg-[#111827] dark:bg-white text-white dark:text-[#111827] shadow-2xs font-extrabold'
-                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-gray-800/80'
+                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-[#262626]'
                 }`}
               >
                 Shop Catalog
@@ -144,7 +144,7 @@ export const Navbar: React.FC = () => {
                 className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
                   currentPage === 'our-story'
                     ? 'bg-[#111827] dark:bg-white text-white dark:text-[#111827] shadow-2xs font-extrabold'
-                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-gray-800/80'
+                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-[#262626]'
                 }`}
               >
                 Our Story
@@ -155,7 +155,7 @@ export const Navbar: React.FC = () => {
                 className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
                   currentPage === 'contact-faq'
                     ? 'bg-[#111827] dark:bg-white text-white dark:text-[#111827] shadow-2xs font-extrabold'
-                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-gray-800/80'
+                    : 'hover:text-[#2563EB] hover:bg-gray-100/80 dark:hover:bg-[#262626]'
                 }`}
               >
                 Contact & FAQ
@@ -172,13 +172,13 @@ export const Navbar: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setIsSearchFocused(true)}
-                className="w-full pl-10 pr-4 py-2 text-xs rounded-full bg-gray-100 dark:bg-gray-800/90 text-[#111827] dark:text-gray-100 border border-transparent focus:border-gray-300 dark:focus:border-gray-600 focus:outline-none focus:bg-white dark:focus:bg-gray-900 transition-all placeholder:text-[#6B7280] dark:placeholder:text-gray-400"
+                className="w-full pl-10 pr-4 py-2 text-xs rounded-full bg-gray-100 dark:bg-[#222222] text-[#111827] dark:text-neutral-100 border border-transparent focus:border-gray-300 dark:focus:border-neutral-600 focus:outline-none focus:bg-white dark:focus:bg-[#1c1c1c] transition-all placeholder:text-[#6B7280] dark:placeholder:text-neutral-400"
               />
-              <Search className="w-4 h-4 text-[#6B7280] dark:text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-[#6B7280] dark:text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6B7280] dark:text-gray-400 hover:text-[#111827] dark:hover:text-white text-xs p-1"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6B7280] dark:text-neutral-400 hover:text-[#111827] dark:hover:text-white text-xs p-1"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -187,25 +187,25 @@ export const Navbar: React.FC = () => {
 
             {/* Instant Autocomplete Dropdown */}
             {isSearchFocused && searchQuery.trim().length > 0 && (
-              <div className="absolute top-full mt-2 left-0 right-0 bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800 overflow-hidden z-50 p-2 space-y-1">
+              <div className="absolute top-full mt-2 left-0 right-0 bg-white dark:bg-[#1e1e1e] rounded-2xl shadow-xl border border-gray-200 dark:border-neutral-800 overflow-hidden z-50 p-2 space-y-1">
                 {searchMatches.length > 0 ? (
                   searchMatches.map((product) => (
                     <div
                       key={product.id}
                       onClick={() => handleSelectSearchResult(product)}
-                      className="p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/80 flex items-center gap-3 cursor-pointer transition-colors"
+                      className="p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-[#282828] flex items-center gap-3 cursor-pointer transition-colors"
                     >
                       <img
                         src={product.images[0]}
                         alt=""
-                        className="w-10 h-10 rounded-lg object-cover bg-gray-100 dark:bg-gray-800 shrink-0"
+                        className="w-10 h-10 rounded-lg object-cover bg-gray-100 dark:bg-[#222222] shrink-0"
                         referrerPolicy="no-referrer"
                       />
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-semibold text-gray-900 dark:text-gray-100 truncate">
+                        <h4 className="text-xs font-semibold text-gray-900 dark:text-neutral-100 truncate">
                           {product.name}
                         </h4>
-                        <p className="text-[11px] text-gray-500 dark:text-gray-400 truncate">{product.subtitle}</p>
+                        <p className="text-[11px] text-gray-500 dark:text-neutral-400 truncate">{product.subtitle}</p>
                       </div>
                       <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
                         ${product.price.toFixed(2)}
@@ -213,7 +213,7 @@ export const Navbar: React.FC = () => {
                     </div>
                   ))
                 ) : (
-                  <div className="p-4 text-center text-xs text-gray-500 dark:text-gray-400">
+                  <div className="p-4 text-center text-xs text-gray-500 dark:text-neutral-400">
                     No merch found matching "{searchQuery}"
                   </div>
                 )}
@@ -226,14 +226,14 @@ export const Navbar: React.FC = () => {
             {/* Dark / Light Mode Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all cursor-pointer active:scale-90 flex items-center justify-center"
+              className="p-2.5 rounded-xl text-gray-600 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#262626] transition-all cursor-pointer active:scale-90 flex items-center justify-center"
               aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
               title={isDark ? "Switch to light theme" : "Switch to dark theme"}
             >
               {isDark ? (
                 <Sun className="w-5 h-5 text-amber-400 transition-transform duration-300 rotate-0 hover:rotate-90" />
               ) : (
-                <Moon className="w-5 h-5 text-indigo-600 transition-transform duration-300 rotate-0 hover:-rotate-12" />
+                <Moon className="w-5 h-5 text-neutral-800 transition-transform duration-300 rotate-0 hover:-rotate-12" />
               )}
             </button>
 
@@ -243,7 +243,7 @@ export const Navbar: React.FC = () => {
                 setSelectedCategory('All');
                 setCurrentPage('shop');
               }}
-              className="relative p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+              className="relative p-2.5 rounded-xl text-gray-600 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#262626] transition-colors cursor-pointer"
               aria-label="Wishlist"
               title="View Wishlist"
             >
@@ -258,7 +258,7 @@ export const Navbar: React.FC = () => {
             {/* Cart Button with Count */}
             <button
               onClick={() => setIsCartDrawerOpen(true)}
-              className="relative px-3 py-2 rounded-full bg-white/80 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-800 text-[#111827] dark:text-white border border-gray-200/90 dark:border-gray-700 shadow-2xs flex items-center gap-2 transition-all cursor-pointer active:scale-95"
+              className="relative px-3 py-2 rounded-full bg-white/80 dark:bg-[#262626] hover:bg-white dark:hover:bg-[#303030] text-[#111827] dark:text-white border border-gray-200/90 dark:border-neutral-700 shadow-2xs flex items-center gap-2 transition-all cursor-pointer active:scale-95"
               aria-label="Open Cart"
             >
               <ShoppingBag className="w-4 h-4 text-[#2563EB] dark:text-blue-400" />
@@ -271,7 +271,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Menu Hamburger */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2.5 rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 md:hidden transition-colors"
+              className="p-2.5 rounded-xl text-gray-700 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-[#262626] md:hidden transition-colors"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -282,7 +282,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 space-y-4 shadow-xl rounded-b-2xl mt-1">
+        <div className="md:hidden border-t border-gray-200 dark:border-neutral-800 bg-white dark:bg-[#181818] p-4 space-y-4 shadow-xl rounded-b-2xl mt-1">
           {/* Search Input Mobile */}
           <div className="relative">
             <input
@@ -290,19 +290,19 @@ export const Navbar: React.FC = () => {
               placeholder="Search products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-xs rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 placeholder:text-gray-400"
+              className="w-full pl-9 pr-4 py-2 text-xs rounded-xl bg-gray-100 dark:bg-[#242424] text-gray-900 dark:text-neutral-100 border border-gray-200 dark:border-neutral-700 placeholder:text-gray-400"
             />
             <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
           </div>
 
-          <nav className="flex flex-col space-y-1 text-sm font-semibold text-gray-800 dark:text-gray-200">
+          <nav className="flex flex-col space-y-1 text-sm font-semibold text-gray-800 dark:text-neutral-200">
             <button
               onClick={() => {
                 setCurrentPage('home');
                 setIsMobileMenuOpen(false);
               }}
               className={`py-2.5 px-3.5 rounded-xl text-left transition-colors flex items-center justify-between ${
-                currentPage === 'home' ? 'bg-blue-50 dark:bg-blue-900/30 text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-gray-800'
+                currentPage === 'home' ? 'bg-neutral-100 dark:bg-[#2a2a2a] text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-[#242424]'
               }`}
             >
               <span>Home</span>
@@ -315,7 +315,7 @@ export const Navbar: React.FC = () => {
                 setIsMobileMenuOpen(false);
               }}
               className={`py-2.5 px-3.5 rounded-xl text-left transition-colors flex items-center justify-between ${
-                currentPage === 'shop' ? 'bg-blue-50 dark:bg-blue-900/30 text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-gray-800'
+                currentPage === 'shop' ? 'bg-neutral-100 dark:bg-[#2a2a2a] text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-[#242424]'
               }`}
             >
               <span>Shop Catalog</span>
@@ -328,7 +328,7 @@ export const Navbar: React.FC = () => {
                 setIsMobileMenuOpen(false);
               }}
               className={`py-2.5 px-3.5 rounded-xl text-left transition-colors flex items-center justify-between ${
-                currentPage === 'our-story' ? 'bg-blue-50 dark:bg-blue-900/30 text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-gray-800'
+                currentPage === 'our-story' ? 'bg-neutral-100 dark:bg-[#2a2a2a] text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-[#242424]'
               }`}
             >
               <span>Our Story</span>
@@ -340,18 +340,18 @@ export const Navbar: React.FC = () => {
                 setIsMobileMenuOpen(false);
               }}
               className={`py-2.5 px-3.5 rounded-xl text-left transition-colors flex items-center justify-between ${
-                currentPage === 'contact-faq' ? 'bg-blue-50 dark:bg-blue-900/30 text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-gray-800'
+                currentPage === 'contact-faq' ? 'bg-neutral-100 dark:bg-[#2a2a2a] text-[#2563EB] dark:text-blue-400 font-bold' : 'hover:bg-gray-50 dark:hover:bg-[#242424]'
               }`}
             >
               <span>Contact & FAQ</span>
             </button>
 
             {/* Theme Toggle Mobile Row */}
-            <div className="pt-2 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between px-3.5 py-2">
-              <span className="text-xs text-gray-500 dark:text-gray-400">Appearance Mode</span>
+            <div className="pt-2 border-t border-gray-100 dark:border-neutral-800 flex items-center justify-between px-3.5 py-2">
+              <span className="text-xs text-gray-500 dark:text-neutral-400">Appearance Mode</span>
               <button
                 onClick={toggleTheme}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-xs font-bold text-gray-800 dark:text-gray-200"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-[#262626] text-xs font-bold text-gray-800 dark:text-neutral-200"
               >
                 {isDark ? (
                   <>
@@ -360,7 +360,7 @@ export const Navbar: React.FC = () => {
                   </>
                 ) : (
                   <>
-                    <Moon className="w-4 h-4 text-indigo-600" />
+                    <Moon className="w-4 h-4 text-neutral-800" />
                     <span>Dark Mode</span>
                   </>
                 )}

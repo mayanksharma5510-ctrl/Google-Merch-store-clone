@@ -1,4 +1,9 @@
 import { Product, BundlePack, Review } from '../types';
+import googlePenRedImg from '../assets/images/google_pen_red_1786790157376.jpg';
+import googleGrayCapImg from '../assets/images/google_gray_cap_studio_1786791021327.jpg';
+import googleOmbrePenImg from '../assets/images/google_ombre_pen_1786790189875.jpg';
+import nanoBananaTeeImg from '../assets/images/nano_banana_tee_1786790207450.jpg';
+import chromeDinoCollectionImg from '../assets/images/chrome_dino_collection_1786790225821.jpg';
 
 export const SAMPLE_REVIEWS: Review[] = [
   {
@@ -469,6 +474,196 @@ export const PRODUCTS: Product[] = [
       'Material': '100% Cotton Twill',
       'Visor': 'Pre-curved 7 cm',
       'Crown': 'Low Profile 6-Panel Unstructured'
+    }
+  },
+  {
+    id: 'google-pen-red',
+    name: 'Google Pen Red',
+    subtitle: 'Precision 0.5mm quick-dry gel rollerball pen with matte red aluminum barrel',
+    tagline: 'Smooth gliding ink engineered for daily note-taking, sketching, and code design.',
+    price: 12.00,
+    originalPrice: 16.00,
+    category: 'Desk Essentials',
+    rating: 4.88,
+    reviewCount: 112,
+    badge: 'Best Seller',
+    inStock: true,
+    stockLeft: 45,
+    images: [
+      googlePenRedImg,
+      'https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1585336261026-7f547c11f440?w=800&auto=format&fit=crop&q=80'
+    ],
+    colors: [
+      { name: 'Google Red', hex: '#EA4335' },
+      { name: 'Matte Crimson', hex: '#B91C1C' },
+      { name: 'Pure White Accent', hex: '#F9FAFB' }
+    ],
+    sizes: ['0.5mm Fine', '0.7mm Medium'],
+    description: 'The official Google Pen in iconic vibrant red. Crafted with a lightweight anodized aluminum barrel, precision tungsten carbide rollerball, and non-smudge archival pigment ink.',
+    features: [
+      '0.5mm Japanese precision rollerball tip',
+      'Anodized aircraft-grade aluminum casing with spring-loaded clip',
+      'Quick-drying archival black gel ink (refillable)',
+      'Balanced weighted center of gravity for fatigue-free writing'
+    ],
+    specifications: {
+      'Tip Size': '0.5 mm Fine Point',
+      'Ink Color': 'Archival Black Gel Ink',
+      'Barrel Material': 'Anodized Aluminum',
+      'Refill Compatibility': 'Standard Parker G2 Style Refill'
+    }
+  },
+  {
+    id: 'google-gray-cotton-cap',
+    name: 'Google Gray Cotton Cap',
+    subtitle: 'Unstructured 6-panel low-profile dad cap in heather gray organic cotton',
+    tagline: 'Effortlessly cool everyday headwear with subtle tonal Google embroidery.',
+    price: 28.00,
+    originalPrice: 34.00,
+    category: 'Apparel',
+    rating: 4.91,
+    reviewCount: 142,
+    badge: 'Best Seller',
+    inStock: true,
+    stockLeft: 22,
+    images: [
+      googleGrayCapImg,
+      'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800&auto=format&fit=crop&q=80'
+    ],
+    colors: [
+      { name: 'Heather Gray', hex: '#9CA3AF' },
+      { name: 'Charcoal Gray', hex: '#4B5563' },
+      { name: 'Slate Gray', hex: '#6B7280' }
+    ],
+    sizes: ['One Size (Adjustable Strap)'],
+    description: 'Made from 100% breathable organic washed cotton twill in a modern heather gray tone. Features an antique pewter tri-glide slider buckle and matching embroidered ventilation eyelets.',
+    features: [
+      '100% GOTS-certified organic cotton twill',
+      'Unstructured 6-panel relaxed crown fit',
+      'Custom tonal Google G embroidery on front panel',
+      'Soft interior sweatband for all-day comfort'
+    ],
+    specifications: {
+      'Material': '100% Organic Washed Cotton Twill',
+      'Closure': 'Antique Pewter Slider Buckle',
+      'Circumference': '54 - 62 cm (Adjustable)',
+      'Care': 'Spot clean with damp cloth'
+    }
+  },
+  {
+    id: 'google-ombre-pen-purple',
+    name: 'Google Ombre Pen Purple',
+    subtitle: 'Smooth gradient ombre finish with weighted brass core and luxury fluid ink',
+    tagline: 'A stunning statement writing instrument blending Google purple gradient hues.',
+    price: 15.00,
+    originalPrice: 20.00,
+    category: 'Desk Essentials',
+    rating: 4.94,
+    reviewCount: 96,
+    badge: 'Best Seller',
+    inStock: true,
+    stockLeft: 18,
+    images: [
+      googleOmbrePenImg,
+      'https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1569683795645-b62e50fbf103?w=800&auto=format&fit=crop&q=80'
+    ],
+    colors: [
+      { name: 'Purple Ombre', hex: '#8B5CF6' },
+      { name: 'Deep Violet', hex: '#6D28D9' },
+      { name: 'Lavender Mist', hex: '#C084FC' }
+    ],
+    sizes: ['0.5mm Gel', '0.7mm Rollerball'],
+    description: 'Features a smooth two-tone purple ombre gradient anodized finish that transitions from radiant violet to deep amethyst. Weighted for ergonomic balance and effortless fluid writing.',
+    features: [
+      'Two-tone purple ombre gradient anodized aluminum barrel',
+      'Precision Swiss fluid ballpoint cartridge',
+      'Magnetic snap-cap with satisfying tactile closure',
+      'Laser-etched Google typography'
+    ],
+    specifications: {
+      'Finish': 'Dual-tone Purple Ombre Gradient',
+      'Weight': '32 grams (Solid Brass/Aluminum Core)',
+      'Ink Type': 'Ultra-Glide Black Hybrid Ink',
+      'Packaging': 'Recycled Gift Box Included'
+    }
+  },
+  {
+    id: 'nano-banana-tee',
+    name: 'Nano Banana Tee',
+    subtitle: 'Playful micro-scale developer banana graphic on heavyweight combed organic cotton',
+    tagline: 'Because every breakthrough AI algorithm starts with a nano snack.',
+    price: 36.00,
+    originalPrice: 44.00,
+    category: 'Apparel',
+    rating: 4.96,
+    reviewCount: 235,
+    badge: 'Best Seller',
+    inStock: true,
+    stockLeft: 14,
+    images: [
+      nanoBananaTeeImg,
+      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop&q=80'
+    ],
+    colors: [
+      { name: 'Banana Pale Yellow', hex: '#FEF08A' },
+      { name: 'Chalk White', hex: '#F9FAFB' },
+      { name: 'Vintage Black', hex: '#181818' }
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'],
+    description: 'An ode to tech humor and AI computing. Built with 220 GSM heavyweight combed organic cotton jersey, pre-shrunk with a relaxed unisex streetwear drape and silk-screen printed nano-banana icon on chest.',
+    features: [
+      '220 GSM heavyweight 100% organic combed cotton',
+      'High-density screenprint nano banana chest graphic',
+      'Ribbed crewneck collar with reinforced shoulder seams',
+      'OEKO-TEX certified eco-friendly water-based dyes'
+    ],
+    specifications: {
+      'Fabric': '220 GSM Heavyweight Organic Jersey',
+      'Fit': 'Relaxed Unisex Streetwear Fit',
+      'Shrinkage': 'Less than 2% post-wash',
+      'Origin': 'Made in Portugal'
+    }
+  },
+  {
+    id: 'chrome-dino-dark-mode-collection',
+    name: 'Chrome Dino Dark Mode Collection',
+    subtitle: 'Limited-run 8-bit offline T-Rex stealth collectible desk statue, glow enamel pin & organic tee set',
+    tagline: 'Celebrate the iconic No Internet dinosaur in sleek dark mode stealth aesthetic.',
+    price: 64.00,
+    originalPrice: 80.00,
+    category: 'Accessories',
+    rating: 4.98,
+    reviewCount: 389,
+    badge: 'Best Seller',
+    inStock: true,
+    stockLeft: 7,
+    images: [
+      chromeDinoCollectionImg,
+      'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&auto=format&fit=crop&q=80'
+    ],
+    colors: [
+      { name: 'Dark Mode Stealth Black', hex: '#121212' },
+      { name: 'Matrix Green Accent', hex: '#10B981' },
+      { name: 'Monochrome Silver', hex: '#9CA3AF' }
+    ],
+    sizes: ['Complete Collector Set', 'Apparel + Pin Box', 'Desk Mascot Only'],
+    description: 'The definitive tribute to the legendary Chrome Offline Dino runner. Includes a matte black weighted ceramic 8-bit Dino figurine, phosphorescent glow-in-the-dark enamel badge, and premium dark-mode organic tee.',
+    features: [
+      'Weighted matte black 8-bit Dino desk figurine with cactus base',
+      'Phosphorescent glow-in-the-dark enamel collector pin',
+      'Limited edition numbered authenticity card signed by Chrome team',
+      'Includes 100% organic cotton Dark Mode Dino graphic tee'
+    ],
+    specifications: {
+      'Edition': 'Limited Edition 2,500 Sets Worldwide',
+      'Figurine Material': 'Matte Ceramic Polymer (12 cm tall)',
+      'Pin Material': 'Zinc Alloy with Hard Enamel & Glow Pigment',
+      'Packaging': 'Custom Matte Black Gift Box with Magnetic Clasp'
     }
   }
 ];
